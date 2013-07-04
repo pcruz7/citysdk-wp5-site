@@ -1,0 +1,507 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>CitySDK Tourism WP - Applications</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<link rel="icon" type="image/ico" href="favicon.ico" />
+	<link rel="shortcut icon" href="favicon.ico" />
+
+	<link rel="stylesheet" href="styles/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="styles/backtotop.css">
+	<link rel="stylesheet" href="styles/menu.css">
+	<link rel="stylesheet" href="styles/smoothness/jquery-ui-1.10.3.custom.min.css" type="text/css" media="screen" />
+
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+
+	<script type="text/javascript" src="js/jquery.methods.js" charset="UTF-8"></script>
+
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXESsPHgheyRd2FWuv9QRpNa5yxdQYBiw&sensor=false&libraries=drawing"></script>
+
+	<script type="text/javascript" src="js/dev/jquery.citysdk-tourism.uritemplate.js"></script>
+	<script type="text/javascript" src="js/dev/jquery.citysdk-tourism.stub.js"></script>
+	<script type="text/javascript" src="js/dev/jquery.citysdk-tourism.datareader.js"></script>
+
+	<script type="text/javascript" src="js/map/map-loader.js"></script>
+	<script type="text/javascript" src="js/map/map-controls.js"></script>
+	<script type="text/javascript" src="js/map/marker-clusterer.js"></script>
+
+	<script type="text/javascript" src="js/calendar/calendar-loader.js"></script>
+	<script type="text/javascript" src="js/calendar/jquery.icalendar.js"></script>
+	<script type="text/javascript" src="js/calendar/jquery.json-2.4.js"></script>
+	<style>
+	.progress-label {
+		float: left;
+		margin-left: 45%;
+		margin-top: 5px;
+		padding-bottom: 10px;
+		font-weight: bold;
+		text-shadow: 1px 1px 0 #fff;
+	}
+
+	#progressbar {
+		float: left;
+		margin: 10px 0px 0px 10px;
+		width: 95%;
+	}
+
+	.sel-title {
+		color: #0E8703;
+	}
+
+	.highlight-console {
+		background: #99dd73 50% 50% repeat-x !important;
+		border: 1px #88a276 solid !important;
+		padding-left: 3px;
+		padding-right: 3px;
+	}
+
+	td.highlight {
+		border: none !important;
+		padding: 1px 0 1px 1px !important;
+		background: none !important;
+		overflow:hidden;
+	}
+
+	td.highlight a {
+		background: #99dd73 50% 50% repeat-x !important;
+		border: 1px #88a276 solid !important;
+	}
+
+	strong {
+		font-weight: 900;   
+	}
+
+	</style>
+	<script type="text/javascript">
+	var contentOpener = {}, isCtrl = false, loaded = false, calendarQueries = [],
+	calShowing = false, mapShowing = false, isWeb = false, mapQueries = [], 
+	editParams = {
+		'home': [],
+		'categories': ['list', 'limit', 'offset'],
+		'events': ['category', 'tag', 'time', 'coords', 'name', 'limit', 'offset'],
+		'pois': ['category', 'tag', 'coords', 'minimal', 'complete', 'limit', 'offset'],
+		'routes': ['category', 'tag', 'coords', 'name', 'limit', 'offset']
+	}, isProcessing = false;
+
+	function closeConsole () {
+		$("#debug-console").hide('slow');
+		$('#enable-console').attr("checked", false);
+	};
+
+	function toggleConsole () {
+		$("#debug-console").toggle('slow');
+		$('#enable-console').prop("checked", !$('#enable-console').prop("checked"));
+	};
+
+	function calResults (uri, results, type) {
+		if(!isProcessing) {
+			calendarQueries[uri] = { 
+				'results': results,
+				'type': type
+			};
+		}
+
+		appendOrConclude(results, uri, type, calendarQueries);
+		$("#progressbar").hide();
+	};
+
+	function mapResults (uri, results, type) {
+		if(!isProcessing) {
+			mapQueries[uri] = {
+				'results': results,
+				'type': type
+			};
+		}
+
+		appendOrConclude(results, uri, type, mapQueries);
+		$("#progressbar").hide();
+	}
+
+	function appendOrConclude (results, uri, type, query) {
+		if(isProcessing) {
+			$('#answer').html('<pre><code>' + syntaxHighlight(results) + '</code></pre>');
+			$('#answer').toggleClass('primary');
+			
+			delete query[$('.highlight-console').text()];
+			query[uri] = {
+				'results': results,
+				'type': type
+			};
+			$('.highlight-console').text(uri);
+			
+			isProcessing = false;
+			$('.edit').click(editFields);
+		} else if(mapShowing && query == mapQueries){
+			appendQuery(query, uri, type);
+			$('.edit').click(editFields);
+		} else if(calShowing && query == calendarQueries) {
+			appendQuery(query, uri, type);
+			$('.edit').click(editFields);
+		}
+	}
+
+	function addClick (queries) {
+		$('.cal-query').mouseover(function (e){
+			e.preventDefault();
+			$(this).children('a[class^=edit]').show();
+		});
+
+		$('.cal-query').mouseout(function (e){
+			e.preventDefault();
+			$(this).children('a[class^=edit]').hide();
+		});
+
+		$('.link-query').click(function (e){
+			e.preventDefault();
+			$('#progressbar').show();
+			$('#answer').hide();
+			$('#queries').find('.highlight-console').removeClass('highlight-console');
+			$(this).parent().children('a[class^=link-query]').addClass('highlight-console');
+			var worker = new Worker("js/highlighter.js");
+			worker.onmessage = function (e) {
+				$('#answer').html('<pre><code>' + e.data + '</code></pre>').show();
+				$('#progressbar').hide();
+			};
+
+			worker.postMessage({ 'cmd': 'highlight', 'msg': queries[$(this).text()].results });
+		});
+
+		$('.edit').click(editFields);
+	}
+
+	function editFields (e){
+		e.preventDefault();
+
+		var link = $(this).parent().children('a[class^=link-query]'), type = $(this).attr('type');
+		$('#answer').html('Possible parameters for ' + type + ':<ul>');
+		var edit = editParams[type], key, value;
+		for (var i = edit.length - 1; i >= 0; i--) {
+			$('#answer').append('<li style="margin-bottom: 5px"><form><label style="display:inline-block;"><a href="#" class="param">' + edit[i] + '</a></label><input class="input-form" style="display:inline-block; margin-left: 10px;" type="text" name="' + edit[i] + '" /></form></li>');
+
+			value = getParamValue(link.text(), edit[i]);
+			if(value == null) {
+				$('input[name^=' + edit[i] + ']').hide();
+			} else {
+				$('input[name^=' + edit[i] + ']').val(decodeURI(value));
+			}
+		};
+		$('#answer').append('<button id="query-button">Go!</button>').append('</ul>');
+		$('#query-button').css({ 
+			'float': 'right'
+		}).click(function (e) {
+			e.preventDefault();
+			var li = $('#answer').children('li'), l, params = {}, param, value;
+			for (var i = li.length - 1; i >= 0; i--) {
+				if($(li[i]).find('.input-form').val() != '') {
+					param = $(li[i]).find('.param').text();
+					value = $(li[i]).find('.input-form').val();
+					if(value.indexOf(',') !== -1) {
+						var values = value.split(','), v = [];
+						for (var i = values.length - 1; i >= 0; i--) {
+							v.push(values[i]);
+						}
+
+						value = v;
+					} 
+
+					params[param] = value;
+				}
+			}
+
+			$('#answer').toggleClass('primary');
+			$("#progressbar").show();
+
+			isProcessing = true;
+			makeCall(type, params);
+		});
+
+		$('.param').click(function (e) {
+			e.preventDefault();
+			$(this).parent().siblings().toggle().siblings('.input-form').focus();
+		});
+
+		$('#answer').show('slow');
+
+		$('.highlight-console').removeClass('highlight-console');
+		link.addClass('highlight-console');
+	}
+
+	function makeCall (type, params) {
+		if(calShowing) {
+			// from calendar-loader.js
+			try {
+				if(type == "categories")
+					getConsoleCalendarCategories(params);
+				else
+					getConsoleCalendarEvents(params);
+			} catch (e) {
+				console.log(e);
+			}
+		} else if (mapShowing) {
+			try {
+				if(type == "pois")
+					getConsoleMapPois(params);
+				else if(type == "events")
+					getConsoleMapEvents(params);
+				else
+					getConsoleMapRoutes(params);	
+			} catch (e) {
+				console.log(e);
+			}
+		}
+	};
+
+	function getParamValue (uri, param) {
+		var pattern = new RegExp(param + '=([^&]*)', 'g'), vars = null;
+
+		if(uri.indexOf(param + "=") !== -1){
+			vars = pattern.exec(uri);
+			if(vars != null){
+				return vars[1];
+			}
+		}
+
+		return null;
+	};
+
+	function appendQuery (query, uri, type) {
+		if($("#queries").children().length == 0)
+			$('#queries').append('<li><a class="link-query" href="#" type="' + type + '" style="text-decoration:none">' + uri + '</a></li>');
+		else {
+			$("#queries").append('<li><div class="cal-query"><a class="link-query" href="#" style="text-decoration:none">' + uri + '</a><a type="' + type + '" href="#" class="edit"><img style="margin-left: 5px; margin-bottom: -3px" width=15px src="imgs/edit.png" alt="edit" /></a><div></li>');
+			$('.edit').hide();
+			addClick(query);
+		}
+	};
+
+	// action on key up
+	$(document).keyup(function(e) {
+		if(e.which == 17) {
+			isCtrl = false;
+		}
+	});
+
+	// action on key down
+	$(document).keydown(function(e) {
+		if(e.which == 17) {
+			isCtrl = true; 
+		}
+
+		if(e.which == 76 && isCtrl & isWeb) { 
+			toggleConsole();
+		} 
+	});
+
+	function highlightTitle (div) {
+		$('#debug-console').find('.sel-title').removeClass('sel-title');
+		div.addClass('sel-title');
+	}
+
+	$(document).ready(function() {
+		setUpSideNavigation();
+
+		$('#answer').hide();
+		$('#android-content').hide();
+		$('#js-content').hide();
+		$('#layar-content').hide();
+		$('#qr-code-content').hide();
+		$('#debug-console').draggable({
+			cursor: "move",
+			stop: function (event, ui) {
+				$(this).css({
+					'position': 'fixed'
+				});
+			}
+		}).resizable({
+			start: function (event, ui) {
+				$(this).css({
+					'position': 'fixed'
+				});
+			},
+			"handles": "e,w",
+			"minWidth": 400
+		});
+
+		$('#debug-console').hide();
+		$('#default-content').show();
+		$("#progressbar").progressbar({
+			value: false
+		});
+
+		$('#show-cal-console').click(function(e) {
+			e.preventDefault();
+			calShowing = true;
+			mapShowing = false;
+			highlightTitle($(this));
+			$("#queries").html('');
+			for(var key in calendarQueries) {
+				appendQuery(calendarQueries, key, calendarQueries[key].type);
+			}
+			$('#answer').hide('slow');
+			addClick(calendarQueries);
+		});
+
+		$('#show-map-console').click(function(e) {
+			e.preventDefault();
+			calShowing = false;
+			mapShowing = true;
+			highlightTitle($(this));
+			$("#queries").html('');
+			for(var key in mapQueries) {
+				appendQuery(mapQueries, key, mapQueries[key].type);
+			}
+			$('#answer').hide('slow');
+			addClick(mapQueries);
+		});
+
+		contentOpener = new OpenContent();
+		loadCalendar(calResults);
+		$('#enable-console').change(function() {
+			$("#debug-console").toggle('slow');
+		});
+
+		$('#close-console').click(function(e) {
+			e.preventDefault();
+			closeConsole();
+		});
+
+		$('.android').click(function (e) {
+			e.preventDefault();
+			closeConsole();
+			contentOpener.openContent('Android Application - Mobile Guide', '#android-content');
+			isWeb = false;
+		});
+
+		$('.js').click(function (e) {
+			e.preventDefault();
+			closeConsole();
+			contentOpener.openContent('JavaScript/jQuery Application - Calendar/Map Application', '#js-content');
+			if(!loaded)
+				loadMap(mapResults);
+			loaded = true;
+			isWeb = true;
+		});
+
+		$('.layar').click(function (e) {
+			e.preventDefault();
+			closeConsole();
+			contentOpener.openContent('Layar Application', '#layar-content');
+			isWeb = false;
+		});
+
+		$('.qr-codes').click(function (e) {
+			e.preventDefault();
+			closeConsole();
+			contentOpener.openContent('QR Code Examples', '#qr-codes-content');
+			isWeb = false;
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="header">
+	</div>
+	<div id="navi"></div>
+	<div id="side-bar">
+		<ul id="side-menu">
+			<li class="android"><a href="#" title="Mobile Guide">Android <br />Application</a></li>
+			<li class="js"><a href="#" title="Event Calendar/Map Application">Web <br/>Widgets</a></li>
+			<li class="layar"><a href="#" title="Layar Application">Augmented<br/> Reality</a></li>
+			<li class="qr-codes"><a href="#" title="QR Codes">Example <br /> QR Codes</a></li>
+		</ul>
+	</div>
+	<div id="debug-console">
+		<div style="float: right;" id="close-console"><a href="#" style="text-decoration: none">X</a></div>
+		<h4 style="margin-left: 10px">Console (show <a id="show-cal-console" href="#" style="text-decoration:none">Calendar</a>, <a id="show-map-console" href="#" style="text-decoration:none">Map</a>)</h4>
+		<div style="max-height:420px">
+			<ol id="queries" style="word-wrap:break-word; max-height:100px; overflow:auto; margin: 0px 10px 0px 10px">
+			</ol>
+			<div id="progressbar"><div class="progress-label">Loading...</div></div>
+			<div id="answer" class="primary" style="word-wrap:break-word; max-height:300px; overflow:auto; margin: 10px 10px 0px 10px">
+			</div>
+		</div>
+	</div>
+</div>
+<div id="content">
+	<h2 class="title">Applications</h2>
+	<div id="accordion-container">
+		<div id="default-content" class="accordion-content">
+			In this page, it is presented a few applications using the libraries shown in <a href="libraries.html">Libraries</a>. To view/download each one of them, please click on the items on the left menu.
+		</div>
+		<div id="android-content" class="accordion-content">
+			To install the Mobile Guide Android application simply install a QR code reader 
+			(such as <a target="_blank" href="https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en">Barcode Scanner</a> 
+			or <a target="_blank" href="https://play.google.com/store/apps/details?id=com.google.android.apps.unveil&feature=search_result#?t=W251bGwsMSwxLDEsImNvbS5nb29nbGUuYW5kcm9pZC5hcHBzLnVudmVpbCJd">Google Goggles</a>), and
+			scan the following code:
+			<p style="text-align: center">
+				<img src="http://qrfree.kaywa.com/?l=1&s=8&d=http%3A%2F%2Fcitysdk.ist.utl.pt%2Fapk%2FMobile%2520Guide.apk" alt="QRCode"/>
+			</p>
+			<p>
+				Then, simply install the application by pulling down the notifications bar and clicking on the downloaded .apk after it is finished.
+			</p>
+			<p>
+				Currently, the application supports two languages: Portuguese and English. You can test the QR Code functionality by using the examples in
+				Mobile Guide - QR Code Examples and by setting the default endpoint to Backend in the Android application.
+			</p>
+		</div>
+		<div id="js-content" class="accordion-content map">
+			<b>Note:</b> These applications are known to work with Google Chrome, Mozzila Firefox, Safari, Opera and Internet Explorer 10.
+			<p>
+				If you wish to see the executed query and its response just toggle the console checkbox:
+				<form action="">
+					<input type="checkbox" name="console" id="enable-console">Enable console (or Ctrl+L to enable/disable console)<br>
+				</form>
+			</p> 
+			<p>
+				Note: the console is moveable and resizeable.
+			</p>
+			<h4>Event Calendar</h4>
+			<p>
+				Just use the drop-down list to load any given type of events. Then simply click on the wanted date to display
+				information about it.
+			</p>
+			<div id="calendar-container">
+			</div>
+			<p></p>
+			<h4>Map-based Application</h4>
+			<p>
+				A map-based Javascript application using our library is shown below. 
+				Use the view option in the center right to choose either POIs, Events or Routes. 
+				Use the top menu to draw any form and view the selected option within the drawn area.
+				The show blocks flag indicates whether neighbourhoods should be drawn in the map or not.
+			</p>
+			<div id="map-container">
+			</div>
+		</div>
+		<div id="layar-content" class="accordion-content">
+			<p>
+				The CitySDK layer can be found <a href="http://layar.it/10EaFSo" target="_blank">here</a>. To use it just download the Layar Application for Android or iOS-enabled device (such as iPhone) and enable the mentioned layer within the downloaded application. 
+			</p>
+		</div>
+		<div id="qr-codes-content" class="accordion-content">
+			You can use the following QR codes as examples for the QR Code Search functionality of Mobile Guide.
+			<p></p>
+			<table style="width:650px; border-collapse: collapse; border-spacing: 0; margin: 0px 10px 10px 10px;">
+				<th>Points of Interest</th>
+				<tr>
+					<td><a href="javascript:void(0)" onclick='show("Parque das Na&ccedil;&otilde;es", "www.parquedasnacoes.pt")'>Parque das Na&ccedil;&otilde;es</a></td>
+				</tr>
+				<tr>
+					<td><a href="javascript:void(0)" onclick='show("Pal&aacute;cio da Ajuda", "www.palaciodaajuda.imc-ip.pt/");'>Pal&aacute;cio da Ajuda</a></td>
+				</tr>
+			</table>
+		<div id="show" style="margin-top:10px none; text-align:center; font-weight: bold" ></div>
+		<div id="code" style="display: none; text-align: center; height: 250px" ></div>
+		<div id="button" style="text-align: center; display: none">
+			<button id="hidr">
+				Hide
+			</button>
+		</div>
+	</div>
+	<div id="backtop"></div>
+</div>
+<div id="footer"></div>
+</div>
+</body>
+</html>

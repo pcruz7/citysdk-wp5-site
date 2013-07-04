@@ -1,0 +1,11 @@
+citysdk.tourism.client.exceptions
+citysdk.tourism.client.parser
+citysdk.tourism.client.parser.data
+citysdk.tourism.client.poi
+citysdk.tourism.client.poi.base
+citysdk.tourism.client.poi.lists
+citysdk.tourism.client.poi.single
+citysdk.tourism.client.requests
+citysdk.tourism.client.requests.uri
+citysdk.tourism.client.terms
+citysdk.tourism.client.tests

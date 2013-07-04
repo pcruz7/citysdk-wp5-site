@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>CitySDK Tourism WP - Libraries</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="icon" type="image/ico" href="favicon.ico" />
+	<link rel="shortcut icon" href="favicon.ico" />
+
+	<link href="styles/style.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="styles/shCore.css" rel="stylesheet" type="text/css" />
+	<link href="styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="styles/menu.css">
+	<link rel="stylesheet" href="styles/backtotop.css">
+
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.methods.js" charset="UTF-8"></script>
+
+	<script type="text/javascript" src="js/brushes/shCore.js"></script>
+	<script type="text/javascript" src="js/brushes/shBrushJava.js"></script>
+	<script type="text/javascript" src="js/brushes/shBrushJScript.js"></script>
+	<script type="text/javascript" src="js/brushes/shBrushObjC.js"></script>
+	<script type="text/javascript" src="js/brushes/shBrushPhp.js"></script>
+
+	<script type="text/javascript" src="content/java-examples.js"></script>
+	<script type="text/javascript" src="content/js-examples.js"></script>
+	<script type="text/javascript" src="content/obj-examples.js"></script>
+	<script type="text/javascript" src="content/php-examples.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+	var opener;
+	$(document).ready(function() {
+		setUpSideNavigation();
+
+		$('#java-content').hide();
+		$('#js-content').hide();
+		$('#php-content').hide();
+		$('#objc-content').hide();
+		$('#default-content').show();
+
+		opener = new OpenContent();
+		$('.java').click(function (e) {
+			e.preventDefault();
+			opener.openContent('Java Library', '#java-content');
+		});
+
+		$('.js').click(function (e) {
+			e.preventDefault();
+			opener.openContent('JavaScript/jQuery Library', '#js-content');
+		});
+
+		$('.php').click(function (e) {
+			e.preventDefault();
+			opener.openContent('PHP Library', '#php-content');
+		});
+
+		$('.objc').click(function (e) {
+			e.preventDefault();
+			opener.openContent('Objective-C Library', '#objc-content');
+		});
+	});
+	</script>
+	<div id="header">
+	</div>
+	<div id="navi"></div>
+	<div id="side-bar">
+		<ul id="side-menu">
+			<li class="java"><a href="#" title="Java">Java <br/> Library</a><span class="fading-line"></span></li>
+			<li class="js"><a href="#" title="JavaScript">JavaScript <br/> Library</a><span class="fading-line"></span></li>
+			<li class="php"><a href="#" title="PHP">PHP <br/> Library</a><span class="fading-line"></span></li>
+			<li class="objc"><a href="#" title="Objective-C">Objective-C <br/> Library</a></li>
+		</ul>
+	</div>
+	<div id="content">
+		<h2 class="title">Libraries</h2>
+		<div id="accordion-container">
+			<div id="default-content" class="accordion-content">
+				In this page, it is presented each of the developed libraries: Java, JavaScript, PHP and Objective-C. To view each one of them, please click on the items on the left menu.
+			</div>
+			<div id="java-content" class="accordion-content">
+				This is mainly a synchronous library, so in Java-based systems, such as Android, always bear in mind to make
+				any remote calls in a separate thread so not to block the UI thread. You may download the .jar file or the source code <a target="_blank" href="https://github.com/pcruz7/citysdk-wp5-java">here</a>. 
+				<h3>Examples</h3>
+				The library resides on three main classes: the TourismClientFactory, visits a given
+				URL, and generates a TourismClient stub with the available server's capacities. From the TourismClient stub, we can then query the server
+				for single or list of POI-based data. Finally, the DataReader exists to further parse and get details from the returned data more switfly.
+				<h4>Making a TourismClient Stub</h4>
+				To generate a TourismClient stub, one uses the TourismClientFactory by passing the home URL. If the URL is a CitySDK-powered tourism server
+				then the factory class will generate a TourismClient stub. Such URL is visited only once and further calls on the factory with the same URL
+				will just generate another (equal) stub without calling the URL again. If a different URL is passed then the mentioned procedure is repeated.
+				An example of using the TourismClientFactory class is shown below:
+				<pre id="java-create" class="brush: java">
+					<script type="text/javascript">
+					$('#java-create').html(javaCreate);
+					</script>
+				</pre>
+				<h4>Using the TourismClient Stub</h4>
+				The TourismClient stub allows to call and instantiate the POI objects
+				(like POIs, Events, Routes, Categories and Tags) and its listings. Some examples are shown below:
+				<h5>Getting a List of POI-based Objects</h5>
+				A list of POI-based objects is requested through the use of a parameter list which contains the query parameters
+				to make a given request. An example of getting a list of POIs is shown below:
+
+				<pre id="java-use" class="brush: java">
+					<script type="text/javascript">
+					$('#java-use').html(javaUse);
+					</script>
+				</pre>
+				<h5>Getting a list of Categories or Tags</h5>
+				A list of Categories can be requested by specifying which list is needed (POIs, Events or Routes). Getting a list of Tags will be similar.
+				<p>
+					An example is shown below:
+				</p>
+				<pre id="java-categories" class="brush: java">
+					<script type="text/javascript">
+					$('#java-categories').html(javaCategories);
+					</script>
+				</pre>																				
+
+
+				<h5>Getting a Single POI-based Object</h5>
+				Getting a single POI-based object (like POIs, Events or Routes) can be made by using the base and the id of such object like shown below:
+				<pre id="java-poi"class="brush: java">
+					<script type="text/javascript">
+					$('#java-poi').html(javaPoi);
+					</script>
+				</pre>																				
+
+
+				<h4>Using the DataReader on returned data</h4>
+				The DataReader is used to parse the objects returned by the methods of TourismClient stub. This class allows to parse
+				any type of <b>SINGLE</b> POI-based object and return the desired value. Some examples are shown next. 					
+				<pre id="java-data" class="brush: java">
+					<script type="text/javascript">
+					$('#java-data').html(javaReader);
+					</script>
+				</pre>
+
+				<h3>Documentation</h3>
+				<p>
+					For further information please read the documentation of the Java library found <a target="_blank" href="jdoc/index.html">here</a>.
+				</p>
+			</div>
+			<div id="js-content" class="accordion-content">
+				The jQuery Library is built as an assynchronous system, in which every request will need one callback to handle
+				the returned data. This is one of the main differences between this and the Java library. You may download the source code or the minified version file <a target="_blank" href="https://github.com/pcruz7/citysdk-wp5-js">here</a>. 
+				<p>
+					<b>Note</b>: These libraries are known to work with Chrome, Safari, Opera, Firefox and Internet Explorer 10.
+				</p>
+				<h3>Examples</h3>
+				The library is very similar in usage to the Java Library, and like it, it resides in three main objects: TourismVisitor, TourismClient stub and Data Reader.
+				The TourismVisitor is responsible for the creation of the TourismClient stub. Both the last one and the DataReader are equal in nature to the presented Java Library.
+				<h4>Making a TourismClient Stub</h4>
+				To create a TourismClient stub we simply use the TourismVisitor class. Unlike the TourismClientFactory, this class always visits the given URL, as it does not
+				store any previous REST calls or TourismClient stubs. An example is shown below:
+				<pre id="js-create" class="brush: js">
+					<script type="text/javascript">
+					$('#js-create').html(jsCreate);
+					</script>
+				</pre>
+				<h4>Using the TourismClient Stub</h4>
+				The TourismClient stub has similar methods to the ones shown in the Java Library, however, and as previously mentioned, a callback is needed
+				since all the requests are made in an assynchronous matter. It will be presented similar examples to the ones shown in the Java Library section.
+
+				<h5>Getting a List of POI-based Objects</h5>
+				A list of POI-based objects is requested through the use of a parameter array which contains the query parameters
+				to make a given request. The example below shows how to get a list of Events:
+				<pre id='js-use' class="brush: js">
+					<script type="text/javascript">
+					$('#js-use').html(jsUse);
+					</script>
+				</pre>
+				<h5>Getting a list of Categories or Tags</h5>
+				Just like in the Java Library, requesting a list of Categories can be done by specifying which list is needed (POIs, Events or Routes).
+				Getting a list of Tags will be similar.
+
+				<p>
+					An example is shown below:
+				</p>
+				<pre id='js-categories' class="brush: js">
+					<script type="text/javascript">
+					$('#js-categories').html(jsCategories);
+					</script>
+				</pre>																				
+
+				<h5>Getting a Single POI-based Object</h5>
+				Once again, and just like the Java Library, getting a single POI-based object (like POIs, Events or Routes)
+				can be made by using the base and the id of such object like shown below:
+				<pre id='js-poi' class="brush: js">
+					<script type="text/javascript">
+					$('#js-poi').html(jsPoi);
+					</script>
+				</pre>
+				<h4>Using the DataReader on returned data</h4>
+				The DataReader is similar in usage to the Java's DataReader, as shown below:
+				<pre id="js-data" class="brush: js">
+					<script type="text/javascript">
+					$("#js-data").html(jsData);
+					</script>
+				</pre>
+				<h3>Documentation</h3>
+				<p>
+					The documentation of the jQuery library can be found <a target="_blank" href="jsdoc/index.html">here</a>.
+				</p>
+			</div>
+			<div id="php-content" class="accordion-content">
+				This is a synchronous library, just like Java. Bear in mind that the TourismClient stub uses the $_SESSION var to determine if it should fetch the resources from a CitySDK-enabled server or just to load them from it. You may download the project file <a href="https://github.com/pcruz7/citysdk-wp5-php" target="_blank">here</a>, 
+				build the framework and include it in your projects. 
+				<h3>Examples</h3>
+				The PHP library resides in two main classes: TourismClient stub and the DataReader.
+				<h4>Creating and using the TourismClient Stub</h4>
+				To generate a TourismClient stub, simply create a new object and pass the home URL. If the URL is a CitySDK-powered tourism server
+				then a TourismClient stub is generated. Such URL is visited only once and further creations with the same URL
+				will just generate another (equal) stub without calling the URL again (these are loaded from the $_SESSION var). If a different URL is passed then the mentioned procedure is repeated. Since the $_SESSION var is used, remember to create such stub before outputting any result to the client.
+				An example of creating a TourismClient stub is shown below:
+				<pre id="php-create" class="brush: php">
+					<script type="text/javascript">
+					$("#php-create").html(phpCreate);
+					</script>
+				</pre>
+				<h4>Using the TourismClient stub</h4>
+				The TourismClient stub allows to call and instantiate the POI objects
+				(like POIs, Events, Routes, Categories and Tags) and its listings. Some examples are shown below:
+				<h5>Getting List of POI-based Objects</h5>
+				A list of POI-based objects is requested through the use of a parameter list which contains the query parameters
+				to make a given request. An example of getting a list of POIs is shown below:
+				<pre id="php-use" class="brush: php">
+					<script type="text/javascript">
+					$('#php-use').html(phpUse);
+					</script>
+				</pre>
+				<h5>Getting a List of Categories or Tags</h5>
+				A list of Categories can be requested by specifying which list is needed (POIs, Events or Routes). Getting a list of Tags will be similar.
+				<p>
+					An example is shown below:
+				</p>
+				<pre id="php-categories" class="brush: php">
+					<script type="text/javascript">
+					$('#php-categories').html(phpCategories);
+					</script>
+				</pre>
+				<h5>Getting a Single POI-based Object</h5>
+				Getting a single POI-based object (like POIs, Events or Routes) can be made by using the base and the id of such object like shown below:
+				<pre id='php-pois' class="brush: php">
+					<script type="text/javascript">
+					$('#php-pois').html(phpPoi);
+					</script>
+				</pre>
+				<h4>Using the DataReader on returned data</h4>
+				The DataReader is used to parse the objects returned by the methods of TourismClient stub. This class allows to parse
+				any type of <b>SINGLE</b> POI-based object and return the desired value. Some examples are shown next. 
+				<pre id='php-data' class="brush: php">
+					<script type="text/javascript">
+					$('#php-data').html(phpData);
+					</script>
+				</pre>
+				<h3>Documentation</h3>
+				<p>
+					The documentation of the PHP library can be found <a target="_blank" href="phpdoc/index.html">here</a>.
+				</p>
+			</div>
+			<div id="objc-content" class="accordion-content">
+				<p>
+					This is mainly a synchronous library, just like Java, so always bear in mind to make
+					any remote calls in a separate thread so not to block the UI thread. You may download the project file <a href="https://github.com/pcruz7/citysdk-wp5-objc" target="_blank">here</a>, 
+					build the framework and include it in your projects. 
+				</p>
+				<h3>Examples</h3>
+				Just like the Java library, the Objective-C library resides on the same three main classes: the TourismClientFactory, TourismClient stub and the DataReader.
+				<h4>Making a TourismClient Stub</h4>
+				To generate a TourismClient stub, one uses the TourismClientFactory by passing the home URL. If the URL is a CitySDK-powered tourism server
+				then the factory class will generate a TourismClient stub. Such URL is visited only once and further calls on the factory with the same URL
+				will just generate another (equal) stub without calling the URL again. If a different URL is passed then the mentioned procedure is repeated.
+				An example of using the TourismClientFactory class is shown below:
+				<pre id="obj-create" class="brush: oc">
+					<script type="text/javascript">
+					$("#obj-create").html(objCreate);
+					</script>
+				</pre>
+				<h4>Using the TourismClient Stub</h4>
+				The TourismClient stub allows to call and instantiate the POI objects
+				(like POIs, Events, Routes, Categories and Tags) and its listings. Some examples are shown below:
+				<h5>Getting a List of POI-based Objects</h5>
+				A list of POI-based objects is requested through the use of a parameter list which contains the query parameters
+				to make a given request. An example of getting a list of POIs is shown below:
+				<pre id="obj-use" class="brush: oc">
+					<script type="text/javascript">
+					$('#obj-use').html(objUse);
+					</script>
+				</pre>
+				<h5>Getting a list of Categories or Tags</h5>
+				A list of Categories can be requested by specifying which list is needed (POIs, Events or Routes). Getting a list of Tags will be similar.
+				<p>
+					An example is shown below:
+				</p>
+				<pre id='obj-categories' class="brush: oc">
+					<script type="text/javascript">
+					$('#obj-categories').html(objCategories);
+					</script>
+				</pre>
+				<h5>Getting a Single POI-based Object</h5>
+				Getting a single POI-based object (like POIs, Events or Routes) can be made by using the base and the id of such object like shown below:
+				<pre id='obj-pois' class="brush: oc">
+					<script type="text/javascript">
+					$('#obj-pois').html(objPoi);
+					</script>
+				</pre>
+				<h4>Using the DataReader on returned data</h4>
+				The DataReader is used to parse the objects returned by the methods of TourismClient stub. This class allows to parse
+				any type of <b>SINGLE</b> POI-based object and return the desired value. Some examples are shown next. 
+				<pre id='obj-data' class="brush: oc">
+					<script type="text/javascript">
+					$('#obj-data').html(objData);
+					</script>
+				</pre>
+				<h3>Documentation</h3>
+				<p>
+					The documentation of the Object-C library can be found <a target="_blank" href="objcdoc/index.html">here</a>.
+				</p>
+			</div>
+		</div>
+		<div id="backtop"></div>
+	</div> <!-- content -->
+
+	<div id="footer"></div>
+	<script type="text/javascript">
+	SyntaxHighlighter.all();
+	</script>
+</body>
+</html>

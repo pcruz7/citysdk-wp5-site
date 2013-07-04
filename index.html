@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>CitySDK Tourism WP - Home</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="icon" type="image/ico" href="favicon.ico" />
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="stylesheet" href="styles/backtotop.css">
+	<link rel="stylesheet" href="styles/style.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.methods.js" charset="UTF-8"></script>
+</head>
+<body>
+	<div id="header">
+	</div>
+	<div id="navi"></div>
+	<div id="content">
+		<h2 class="title">Tourism WP</h2>
+		<div id="accordion-container">
+			<p class="space">
+				This website is intended to support the CitySDK Tourism Working Package. The system architecture is shown in the figure below:
+			</p>
+			<p class="space">
+				<img src="imgs/system-architecture.png" alt="system-architecture"/>
+			</p>
+			<p class="space">
+				Cities provide their Data Sets to the CitySDK Framework. This is achievable by implementing the Data Adapters which load such sets into the Framework's engine.
+				Such Data Adapters and the CitySDK Framework is explained in <a href="server.html">Server Implementation Reference</a>.
+			</p>
+			<p class="space">
+				There are two ways that applications can make use of the Data provided by the Framework:
+				<ul>
+					<li>
+						By using the REST API directly (which is described and documented in <a href="api.html">REST API</a>). To make use of the API, one must use a generated key provided in <a href="keys.html">Developer Keys</a>;
+					</li>
+					<li>
+						Or by using one of the provided <a href="libraries.html">Libraries</a> which ease the use of the REST API and parsing of the returned data. Such libraries have documentation and usage examples in the same section.
+					</li>
+				</ul>
+			</p>
+			<p class="space">
+				Finally, in <a href="applications.html">Applications</a>, we demonstrate a few applications using the mentioned API and libraries.
+			</p>
+			<p style="margin: 10px 10px 10px 10px">
+				This Working Package took part the cities mentioned in <a href="cities.html">Participating Cities</a>. Website, libraries and applications done for the <a target="_blank" href="http://www.citysdk.eu">CitySDK</a> Tourism WP.
+			</p>
+		</div>
+		<div id="backtop"></div>
+	</div><!-- content -->
+	<div id="footer"></div>
+</body>
+</html>

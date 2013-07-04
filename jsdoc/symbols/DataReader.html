@@ -1,0 +1,1458 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - DataReader</title>
+
+		<style type="text/css">
+			/* default.css */
+body
+{
+	font: 12px "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+	width: 800px;
+}
+
+.header
+{
+	clear: both;
+	background-color: #ccc;
+	padding: 8px;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+hr
+{
+	border: none 0;
+	border-top: 1px solid #7F8FB1;
+	height: 1px;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+#index
+{
+	margin-top: 24px;
+	float: left;
+	width: 160px;
+	position: absolute;
+	left: 8px;
+	background-color: #F3F3F3;
+	padding: 8px;
+}
+
+#content
+{
+	margin-left: 190px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	width: 140px;
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #777;
+	font-style: italic;
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+		</style>
+	</head>
+
+	<body>
+<!-- ============================== header ================================= -->	
+		<!-- begin static/header.html -->
+		<div id="header">
+</div>
+		<!-- end static/header.html -->
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<div align="center"><a href="../index.html">Class Index</a>
+| <a href="../files.html">File Index</a></div>
+<hr />
+<h2>Classes</h2>
+<ul class="classList">
+	
+	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
+	
+	<li><a href="../symbols/DataReader.html">DataReader</a></li>
+	
+	<li><a href="../symbols/GeometryContent.html">GeometryContent</a></li>
+	
+	<li><a href="../symbols/ImageContent.html">ImageContent</a></li>
+	
+	<li><a href="../symbols/LineContent.html">LineContent</a></li>
+	
+	<li><a href="../symbols/LocationContent.html">LocationContent</a></li>
+	
+	<li><a href="../symbols/PointContent.html">PointContent</a></li>
+	
+	<li><a href="../symbols/PolygonContent.html">PolygonContent</a></li>
+	
+	<li><a href="../symbols/TourismClient.html">TourismClient</a></li>
+	
+	<li><a href="../symbols/TourismVisitor.html">TourismVisitor</a></li>
+	
+	<li><a href="../symbols/UriTemplate.html">UriTemplate</a></li>
+	
+</ul>
+<hr />
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1 class="classTitle">
+				
+				Class DataReader
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p class="description">
+				
+				
+			
+				Used to parse single POI objects.
+				
+				
+					<br /><i>Defined in: </i> <a href="../symbols/src/src_jquery.citysdk-tourism.datareader.js.html">jquery.citysdk-tourism.datareader.js</a>.
+				
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class DataReader.">
+				<caption>Class Summary</caption>
+				<thead>
+					<tr>
+						<th scope="col">Constructor Attributes</th>
+						<th scope="col">Constructor Name and Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="attributes">&nbsp;</td>
+						<td class="nameDescription" >
+							<div class="fixedFont">
+								<b><a href="../symbols/DataReader.html#constructor">DataReader</a></b>()
+							</div>
+							<div class="description"></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class DataReader.">
+					<caption>Method Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getAvailableLanguages">getAvailableLanguages</a></b>(poi, field)
+								</div>
+								<div class="description">Gets the available languages for the POI object.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getCalendar">getCalendar</a></b>(poi, term)
+								</div>
+								<div class="description">Gets the calendar with a given term from the POI object.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getCategories">getCategories</a></b>(poi, lang)
+								</div>
+								<div class="description">Gets the categories in a given language.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getContacts">getContacts</a></b>(poi)
+								</div>
+								<div class="description">Gets the contacts from the POI object.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getDescription">getDescription</a></b>(poi, lang)
+								</div>
+								<div class="description">Gets a given description from the POI object with a given language.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getImagesUri">getImagesUri</a></b>(poi)
+								</div>
+								<div class="description">Gets all image URI from the link section of the POI object.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getLabel">getLabel</a></b>(poi, term, lang)
+								</div>
+								<div class="description">Gets a label description from the POI object with a given term in a given language.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getLink">getLink</a></b>(poi, term)
+								</div>
+								<div class="description">Gets a given link with a given term from the POI object.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getLocalLanguage">getLocalLanguage</a></b>()
+								</div>
+								<div class="description">Gets the local language and country.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getLocationGeometry">getLocationGeometry</a></b>(poi, term)
+								</div>
+								<div class="description">Gets all geometries from the location of the POI object with a given term.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getLocationLine">getLocationLine</a></b>(poi, term)
+								</div>
+								<div class="description">Gets the lines from the location of the POI object with a given term.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getLocationPoint">getLocationPoint</a></b>(poi, term)
+								</div>
+								<div class="description">Gets the point from the location of the POI object with a given term.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getLocationPolygon">getLocationPolygon</a></b>(poi, term)
+								</div>
+								<div class="description">Gets the polygons from the location of the POI object with a given term.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getOccupation">getOccupation</a></b>(poi, lang)
+								</div>
+								<div class="description">Gets the occupation description from the POI object with a given language.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getPrice">getPrice</a></b>(poi, lang)
+								</div>
+								<div class="description">Gets a price description from the POI object with a given language.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getRelationshipBase">getRelationshipBase</a></b>(poi, term)
+								</div>
+								<div class="description">Gets the relationship base with a given term from the POI object.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getRelationshipId">getRelationshipId</a></b>(poi, term)
+								</div>
+								<div class="description">Gets the relationship id with a given term from the POI object.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getThumbnails">getThumbnails</a></b>(poi)
+								</div>
+								<div class="description">Gets all the thumbnail URI or base-64 bytecode from the POI object.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.getWaitingTime">getWaitingTime</a></b>(poi)
+								</div>
+								<div class="description">Gets the waiting time description from the POI object with a given language.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">DataReader.<b><a href="../symbols/DataReader.html#.setDefaultLanguage">setDefaultLanguage</a></b>(lang)
+								</div>
+								<div class="description">Sets the DataReader default language.</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			<div class="details"><a name="constructor"> </a>
+				<div class="sectionTitle">
+					Class Detail
+				</div>
+				
+				<div class="fixedFont">
+						<b>DataReader</b>()
+				</div>
+				
+				<div class="description">
+					
+					
+				</div>
+				
+				
+				
+				
+					
+					
+					
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+
+<!-- ============================== method details ========================= -->		
+			
+				<div class="sectionTitle">
+					Method Detail
+				</div>
+				
+					<a name=".getAvailableLanguages"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String[]}</span>
+					<span class="light">DataReader.</span><b>getAvailableLanguages</b>(poi, field)
+					
+					</div>
+					<div class="description">
+						Gets the available languages for the POI object.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>a single POI object (such as a Point Of Interest, Route or Event).</dd>
+							
+								<dt>
+									<b>field</b>
+									
+								</dt>
+								<dd>specifies the field to be checked (either label or description).</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String[]}</span> an array containing the available languages of a given field.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getCalendar"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">DataReader.</span><b>getCalendar</b>(poi, term)
+					
+					</div>
+					<div class="description">
+						Gets the calendar with a given term from the POI object.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>a single POI object (such as a Point Of Interest, Route or Event).</dd>
+							
+								<dt>
+									<b>term</b>
+									
+								</dt>
+								<dd>the wanted term (see <a href="../symbols/_global_.html#term">term</a>)</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> the calendar in iCalendar format with the given term or false.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getCategories"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">DataReader.</span><b>getCategories</b>(poi, lang)
+					
+					</div>
+					<div class="description">
+						Gets the categories in a given language.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>the object to get the data.</dd>
+							
+								<dt>
+									<b>lang</b>
+									
+								</dt>
+								<dd>the wanted language.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> a list containing the following: the categories in the desired language if none found or empty.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getContacts"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">DataReader.</span><b>getContacts</b>(poi)
+					
+					</div>
+					<div class="description">
+						Gets the contacts from the POI object.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>a single POI object (such as a Point Of Interest, Route or Event).</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> the contacts in vCard format or false.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getDescription"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">DataReader.</span><b>getDescription</b>(poi, lang)
+					
+					</div>
+					<div class="description">
+						Gets a given description from the POI object with a given language.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>a single POI object (such as a Point Of Interest, Route or Event).</dd>
+							
+								<dt>
+									<b>lang</b>
+									
+								</dt>
+								<dd>the wanted language.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> a description in a given language, or in en_GB if
+the wanted language does not exist or false if both do not exist.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getImagesUri"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{<a href="../symbols/ImageContent.html">ImageContent</a>[]}</span>
+					<span class="light">DataReader.</span><b>getImagesUri</b>(poi)
+					
+					</div>
+					<div class="description">
+						Gets all image URI from the link section of the POI object.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>a single POI object (such as a Point Of Interest, Route or Event).</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/ImageContent.html">ImageContent</a>[]}</span> an array of image URI or an empty list.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getLabel"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">DataReader.</span><b>getLabel</b>(poi, term, lang)
+					
+					</div>
+					<div class="description">
+						Gets a label description from the POI object with a given term in a given language.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>a single POI object (such as a Point of Interest, Route or Event).</dd>
+							
+								<dt>
+									<b>term</b>
+									
+								</dt>
+								<dd>the wanted term (see <a href="../symbols/_global_.html#term">term</a>).</dd>
+							
+								<dt>
+									<b>lang</b>
+									
+								</dt>
+								<dd>the wanted language.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> a label description corresponding to the term in a given language, or en_GB if
+the wanted language does not exist or false if both do not exist.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getLink"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">DataReader.</span><b>getLink</b>(poi, term)
+					
+					</div>
+					<div class="description">
+						Gets a given link with a given term from the POI object.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>the object to get the data.</dd>
+							
+								<dt>
+									<b>term</b>
+									
+								</dt>
+								<dd>the term used - see <a href="../symbols/_global_.html#term">term</a></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> the link with the given term or null if none was found.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getLocalLanguage"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">DataReader.</span><b>getLocalLanguage</b>()
+					
+					</div>
+					<div class="description">
+						Gets the local language and country.
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> the local language in the following format lang_COUNTRY (e.g.: pt_PT) or 
+just "en" if it was not possible to get it.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getLocationGeometry"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{<a href="../symbols/GeometryContent.html">GeometryContent</a>[]}</span>
+					<span class="light">DataReader.</span><b>getLocationGeometry</b>(poi, term)
+					
+					</div>
+					<div class="description">
+						Gets all geometries from the location of the POI object with a given term.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>a single POI object (such as a Point Of Interest, Route or Event).</dd>
+							
+								<dt>
+									<b>term</b>
+									
+								</dt>
+								<dd>the wanted term.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/GeometryContent.html">GeometryContent</a>[]}</span> an array containing all geometries with the given term or an empty array.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getLocationLine"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{<a href="../symbols/LineContent.html">LineContent</a>[]}</span>
+					<span class="light">DataReader.</span><b>getLocationLine</b>(poi, term)
+					
+					</div>
+					<div class="description">
+						Gets the lines from the location of the POI object with a given term.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>a single POI object (such as a Point Of Interest, Route or Event).</dd>
+							
+								<dt>
+									<b>term</b>
+									
+								</dt>
+								<dd>the wanted term.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/LineContent.html">LineContent</a>[]}</span> an array containing all lines with the given term or an empty array.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getLocationPoint"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{<a href="../symbols/PointContent.html">PointContent</a>[]}</span>
+					<span class="light">DataReader.</span><b>getLocationPoint</b>(poi, term)
+					
+					</div>
+					<div class="description">
+						Gets the point from the location of the POI object with a given term.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>a single POI object (such as a Point Of Interest, Route or Event).</dd>
+							
+								<dt>
+									<b>term</b>
+									
+								</dt>
+								<dd>the wanted term.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/PointContent.html">PointContent</a>[]}</span> an array containing all points with the given term or an empty array.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getLocationPolygon"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{<a href="../symbols/PolygonContent.html">PolygonContent</a>[]}</span>
+					<span class="light">DataReader.</span><b>getLocationPolygon</b>(poi, term)
+					
+					</div>
+					<div class="description">
+						Gets the polygons from the location of the POI object with a given term.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>a single POI object (such as a Point Of Interest, Route or Event).</dd>
+							
+								<dt>
+									<b>term</b>
+									
+								</dt>
+								<dd>the wanted term.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/PolygonContent.html">PolygonContent</a>[]}</span> an array containing all polygons with the given term or an empty array.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getOccupation"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">DataReader.</span><b>getOccupation</b>(poi, lang)
+					
+					</div>
+					<div class="description">
+						Gets the occupation description from the POI object with a given language.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>a single POI object (such as a Point Of Interest, Route or Event).</dd>
+							
+								<dt>
+									<b>lang</b>
+									
+								</dt>
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> the occupation description (0 to 100) or false.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getPrice"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">DataReader.</span><b>getPrice</b>(poi, lang)
+					
+					</div>
+					<div class="description">
+						Gets a price description from the POI object with a given language.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>a single POI object (such as a Point Of Interest, Route or Event).</dd>
+							
+								<dt>
+									<b>lang</b>
+									
+								</dt>
+								<dd>the wanted language.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> a price description in the given language, or in en_GB if
+the wanted language does not exist or false if both do not exist.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getRelationshipBase"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">DataReader.</span><b>getRelationshipBase</b>(poi, term)
+					
+					</div>
+					<div class="description">
+						Gets the relationship base with a given term from the POI object.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>the object to get the data.</dd>
+							
+								<dt>
+									<b>term</b>
+									
+								</dt>
+								<dd>the term used (see <a href="../symbols/_global_.html#term">term</a>).</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> the relationship base with the given term or false if none was found.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getRelationshipId"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">DataReader.</span><b>getRelationshipId</b>(poi, term)
+					
+					</div>
+					<div class="description">
+						Gets the relationship id with a given term from the POI object.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>the object to get the data.</dd>
+							
+								<dt>
+									<b>term</b>
+									
+								</dt>
+								<dd>the term used (see <a href="../symbols/_global_.html#term">term</a>).</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> the relationship id with the given term or false if none was found.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getThumbnails"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{<a href="../symbols/ImageContent.html">ImageContent</a>[]}</span>
+					<span class="light">DataReader.</span><b>getThumbnails</b>(poi)
+					
+					</div>
+					<div class="description">
+						Gets all the thumbnail URI or base-64 bytecode from the POI object.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>a single POI object (such as a Point Of Interest, Route or Event).</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/ImageContent.html">ImageContent</a>[]}</span> all the thumbnail URI or base-64 bytecode or an empty list.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getWaitingTime"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">DataReader.</span><b>getWaitingTime</b>(poi)
+					
+					</div>
+					<div class="description">
+						Gets the waiting time description from the POI object with a given language.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>poi</b>
+									
+								</dt>
+								<dd>a single POI object (such as a Point Of Interest, Route or Event).</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> the waiting time description (in seconds) or false.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".setDefaultLanguage"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">DataReader.</span><b>setDefaultLanguage</b>(lang)
+					
+					</div>
+					<div class="description">
+						Sets the DataReader default language. Default: en_GB
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>lang</b>
+									
+								</dt>
+								<dd>the new default language.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					
+				
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+			
+			<hr />
+		</div>
+
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Tue Jul 02 2013 13:20:48 GMT+0100 (WEST)
+		</div>
+	</body>
+</html>
