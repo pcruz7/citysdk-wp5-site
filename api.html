@@ -80,313 +80,331 @@
 									<li><b>complete</b> - search using keyword and get the complete description of the POIs;</li>
 									<li><b>minimal</b> - search using keyword and get the minimal description of the POIs;</li>
 									<li><b>coords</b> - search using coordinates. If it is a single point, the format is: [lat,lon,radius].
-									If it is multiple points, the format is [lat lon, lat lon];</li>
-									<li><b>limit and/or offset</b> - filter the search to a set of results.</li>
-								</ul>
-							</td>
-							<td>List of Points of Interest corresponding to the parameters.</td>
-						</tr>
-						<tr>
-							<td colspan='4'><b>Examples:</b><p>http://citysdk.com/v1/poi/search?category=sports</p> <p>http://citysdk.com/v2/poi/search?category=sports&limit=10&offset=2&minimal=lisbon</p></td>
-						</tr>
-						<tr>
-							<td>find-poi-relations</td>
-							<td>Search for Points of Interest related with another Point of Interest.</td>
-							<td>
-								<ul style="list-style: none; margin:0; padding:0">
-									<li><b>relation</b> - it should be either child or parent</li>
-								</ul>
-								<td>List of Points of Interest related with a Point of Interest.</td>
-							</tr>
-							<tr>
-								<td colspan='4'><b>Examples:</b><p>http://citysdk.com/v1/poi/5177f154c0eb8f1d4c79d4b4/search?relation=child</p></td>
-							</tr>
-							<tr>
-								<td>find-event</td>
-								<td>Search Events using any of the given parameters.</td>
-								<td>
-									<ul style="list-style: none; margin:0; padding:0">
-										<li><b>category</b> - search using categories;</li>
-										<li><b>tag</b> - search using tags;</li>
-										<li><b>name</b> - search using keyword;</li>
-										<li><b>coords</b> - search using coordinates. Same format as Points of Interest;</li>
-										<li><b>time</b> - search using time. It should specify a start and end date. The format is: YYYY-MM-DD[HH-mm-ss];</li>
+										If it is multiple points, the format is [lat lon, lat lon];</li>
 										<li><b>limit and/or offset</b> - filter the search to a set of results.</li>
 									</ul>
 								</td>
-								<td>List of Events corresponding to the parameters.</td>
+								<td>List of Points of Interest corresponding to the parameters.</td>
 							</tr>
 							<tr>
-								<td colspan='4'><b>Examples:</b><p>http://citysdk.com/v1/event/search?time=2013-03-03%202013-03-06</p> <p>http://citysdk.com/v2/event/search?category=sports&limit=10&offset=2&name=football</p></td>
+								<td colspan='4'><b>Examples:</b><p>http://citysdk.com/v1/poi/search?category=sports</p> <p>http://citysdk.com/v2/poi/search?category=sports&limit=10&offset=2&minimal=lisbon</p></td>
 							</tr>
 							<tr>
-								<td>find-event-relations</td>
-								<td>Search for Events related with another Event.</td>
+								<td>find-poi-relations</td>
+								<td>Search for Points of Interest related with another Point of Interest.</td>
 								<td>
 									<ul style="list-style: none; margin:0; padding:0">
 										<li><b>relation</b> - it should be either child or parent</li>
 									</ul>
-								</td>
-								<td>List of Events related with an Event.</td>
-							</tr>
-							<tr>
-								<td colspan='4'><b>Examples:</b><p>http://citysdk.com/v1/event/5177f154c0eb8f1d4c79d4b4/search?relation=child</p></td>
-							</tr>
-							<tr>
-								<td>find-route</td>
-								<td>Search Routes using any of the given parameters.</td>
-								<td>
-									<ul style="list-style: none; margin:0; padding:0">
-										<li><b>category</b> - search using categories;</li>
-										<li><b>tag</b> - search using tags;</li>
-										<li><b>name</b> - search using keyword;</li>
-										<li><b>coords</b> - search using coordinates. Same format as Routes;</li>
-										<li><b>limit and/or offset</b> - filter the search to a set of results.</li>
-									</ul>
-								</td>
-								<td>List of Routes corresponding to the parameters.</td>
-							</tr>
-							<tr>
-								<td colspan='4'><b>Examples:</b><p>http://citysdk.com/v1/route/search?tag=music</p> <p>http://citysdk.com/v2/route/search?category=culture&limit=10&offset=2</p></td>
-							</tr>
-							<tr>
-								<td>find-categories</td>
-								<td>Search Categories for Points of Interest, Events or Routes.</td>
-								<td>
-									<ul style="list-style: none; margin:0; padding:0">
-										<li><b>list</b> - it should be either poi, event or route;</li>
-										<li><b>limit and/or offset</b> - filter the search to a set of results.</li>
-									</ul>
-								</td>
-								<td>List of Categories corresponding to requested list.</td>
-							</tr>
-							<tr>
-								<td colspan='4'><b>Examples:</b><p>http://citysdk.com/v1/category/search?list=poi&limit=10&offset=2</p></td>
-							</tr>
-							<tr>
-								<td>find-tags</td>
-								<td>Search Tags for Points of Interest, Events or Routes.</td>
-								<td>
-									<ul style="list-style: none; margin:0; padding:0">
-										<li><b>list</b> - it should be either poi, event or route;</li>
-										<li><b>limit and/or offset</b> - filter the search to a set of results.</li>
-									</ul>
-								</td>
-								<td>List of Tags corresponding to requested list.</td>
-							</tr>
-							<tr>
-								<td><b>Examples:</b><p>http://citysdk.com/v1/tag/search?list=poi&limit=10&offset=2</p></td>
-							</tr>
-							<tr>
-								<td>find-code</td>
-								<td>Search any given link for Points of Interest, Events or Routes.</td>
-								<td>
-									<ul style="list-style: none; margin:0; padding:0">
-										<li><b>code</b> - the link that should be searched for.</li>
-									</ul>
-								</td>
-								<td>A list of lists: it may contain the 3 types in just one message.</td>
-							</tr>
-							<tr>
-								<td style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px" colspan='4'><b>Examples:</b><p>http://citysdk.com/v1/search?code=www.some-link.com</p></td>
-							</tr>
-						</table>
+									<td>List of Points of Interest related with a Point of Interest.</td>
+								</tr>
+								<tr>
+									<td colspan='4'><b>Examples:</b><p>http://citysdk.com/v1/poi/5177f154c0eb8f1d4c79d4b4/search?relation=child</p></td>
+								</tr>
+								<tr>
+									<td>find-event</td>
+									<td>Search Events using any of the given parameters.</td>
+									<td>
+										<ul style="list-style: none; margin:0; padding:0">
+											<li><b>category</b> - search using categories;</li>
+											<li><b>tag</b> - search using tags;</li>
+											<li><b>name</b> - search using keyword;</li>
+											<li><b>coords</b> - search using coordinates. Same format as Points of Interest;</li>
+											<li><b>time</b> - search using time. It should specify a start and end date. The format is: YYYY-MM-DD[HH-mm-ss];</li>
+											<li><b>limit and/or offset</b> - filter the search to a set of results.</li>
+										</ul>
+									</td>
+									<td>List of Events corresponding to the parameters.</td>
+								</tr>
+								<tr>
+									<td colspan='4'><b>Examples:</b><p>http://citysdk.com/v1/event/search?time=2013-03-03%202013-03-06</p> <p>http://citysdk.com/v2/event/search?category=sports&limit=10&offset=2&name=football</p></td>
+								</tr>
+								<tr>
+									<td>find-event-relations</td>
+									<td>Search for Events related with another Event.</td>
+									<td>
+										<ul style="list-style: none; margin:0; padding:0">
+											<li><b>relation</b> - it should be either child or parent</li>
+										</ul>
+									</td>
+									<td>List of Events related with an Event.</td>
+								</tr>
+								<tr>
+									<td colspan='4'><b>Examples:</b><p>http://citysdk.com/v1/event/5177f154c0eb8f1d4c79d4b4/search?relation=child</p></td>
+								</tr>
+								<tr>
+									<td>find-route</td>
+									<td>Search Routes using any of the given parameters.</td>
+									<td>
+										<ul style="list-style: none; margin:0; padding:0">
+											<li><b>category</b> - search using categories;</li>
+											<li><b>tag</b> - search using tags;</li>
+											<li><b>name</b> - search using keyword;</li>
+											<li><b>coords</b> - search using coordinates. Same format as Routes;</li>
+											<li><b>limit and/or offset</b> - filter the search to a set of results.</li>
+										</ul>
+									</td>
+									<td>List of Routes corresponding to the parameters.</td>
+								</tr>
+								<tr>
+									<td colspan='4'><b>Examples:</b><p>http://citysdk.com/v1/route/search?tag=music</p> <p>http://citysdk.com/v2/route/search?category=culture&limit=10&offset=2</p></td>
+								</tr>
+								<tr>
+									<td>find-categories</td>
+									<td>Search Categories for Points of Interest, Events or Routes.</td>
+									<td>
+										<ul style="list-style: none; margin:0; padding:0">
+											<li><b>list</b> - it should be either poi, event or route;</li>
+											<li><b>limit and/or offset</b> - filter the search to a set of results.</li>
+										</ul>
+									</td>
+									<td>List of Categories corresponding to requested list.</td>
+								</tr>
+								<tr>
+									<td colspan='4'><b>Examples:</b><p>http://citysdk.com/v1/category/search?list=poi&limit=10&offset=2</p></td>
+								</tr>
+								<tr>
+									<td>find-tags</td>
+									<td>Search Tags for Points of Interest, Events or Routes.</td>
+									<td>
+										<ul style="list-style: none; margin:0; padding:0">
+											<li><b>list</b> - it should be either poi, event or route;</li>
+											<li><b>limit and/or offset</b> - filter the search to a set of results.</li>
+										</ul>
+									</td>
+									<td>List of Tags corresponding to requested list.</td>
+								</tr>
+								<tr>
+									<td><b>Examples:</b><p>http://citysdk.com/v1/tag/search?list=poi&limit=10&offset=2</p></td>
+								</tr>
+								<tr>
+									<td>find-code</td>
+									<td>Search any given link for Points of Interest, Events or Routes.</td>
+									<td>
+										<ul style="list-style: none; margin:0; padding:0">
+											<li><b>code</b> - the link that should be searched for.</li>
+										</ul>
+									</td>
+									<td>A list of lists: it may contain the 3 types in just one message.</td>
+								</tr>
+								<tr>
+									<td style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px" colspan='4'><b>Examples:</b><p>http://citysdk.com/v1/search?code=www.some-link.com</p></td>
+								</tr>
+							</table>
+						</div>
 					</div>
-				</div>
-				<div class="slider">
-					<h5 class="header" style="margin-left: 10px"><span>[+]</span><a href="#" style="color:#000000; text-decoration: none"> Resources JSON Example</a></h5>
-					<div class="internal" style="overflow:hidden">
-						<pre id="link-json-example" class="primary">
-							<script type="text/javascript">
-							$("#link-json-example").html(syntaxHighlight(links));
-							</script>
-						</pre>
+					<div class="slider">
+						<h5 class="header" style="margin-left: 10px"><span>[+]</span><a href="#" style="color:#000000; text-decoration: none"> Resources JSON Example</a></h5>
+						<div class="internal" style="overflow:hidden">
+							<pre id="link-json-example" class="primary">
+								<script type="text/javascript">
+								$("#link-json-example").html(syntaxHighlight(links));
+								</script>
+							</pre>
+						</div>
 					</div>
-				</div>
 
-				<h3 style="margin-left: 10px">Points Of Interest, Events and Routes</h3>
-				<p class="space">
-					Each of the 3 resources follow the UML below. For further details go to <a target="_blank" href="http://www.w3.org/2010/POI/documents/Core/core-20111216.html#poi-data-model">W3C-POI WG</a>.
-					<img width=700px src="imgs/uml.png" />
-					Since the 3 resources inherit from the POI class, its properties are as follows:
-					<ul class="code">
-						<li><code class="primary">base</code> - String - base URI of the POI;</li>
-						<li><code class="primary">id</code>	- String - the ID of the POI;</li>						
-						<li><code class="primary">lang</code> - String - the default language of the POI;</li>						
-						<li><code class="primary">license</code> - POITermType - the license restrictions of the POI;</li>						
-						<ul>
-							<li><code class="primary">term</code> - String - to discreminate multiple licenses (e.g.: common, opensource);</li>
-							<li><code class="primary">value</code> - String.</li>
-						</ul>
-						<li><code class="primary">author</code> - POITermType - the author of the POI;</li>						
-						<ul>
-							<li><code class="primary">term</code> - String - to discreminate if the author is a primary, secondary, contributer, editor or publisher author;</li>
-							<li><code class="primary">value</code> - String.</li>
-						</ul>
-						<li><code class="primary">created</code> - Date - the date in which the POI was created (format: YYYY-MM-DD'T'hh:mm:ss.SSSSSSS'Z');</li>					
-						<li><code class="primary">updated</code> - Date - same format as created;</li>
-						<li><code class="primary">deleted</code> - Date - same format as created;</li>						
-						<li><code class="primary">label</code> - POITermType - a human-readable name of the POI. Multiple names are used for synonyms and multiple languages;</li>						
-						<ul>
-							<li><code class="primary">lang</code> - String - the language of the label;</li>
-							<li><code class="primary">term</code> - String - if it is the primary or secondary name;</li>
-							<li><code class="primary">value</code> - String.</li>
-						</ul>
-						<li><code class="primary">description</code> - POIBaseType - a human-readable description that can be discriminated with the language attribute;</li>			
-						<ul>
-							<li><code class="primary">lang</code> - String;</li>
-							<li><code class="primary">value</code> - String;</li>
-							<li><code class="primary">type</code> - String - to discretize the type of description. Its values may be the following: 
-								<ul>
-									<li>X-citysdk/price - containing, e.g., a price of entrance;</li> 
-									<li>X-citysdk/waiting-time - indicating the waiting time in seconds;</li>
-									<li>X-citysdk/occupation - containing the occupation of the POI, between 0 and 100;</li>
-									<li>X-citysdk/accessibility-textual - accessibility information in human-readable format;</li>
-									<li>X-citysdk/accessibility-properties - containing machine-readable accessibility information.</li> 
-								</ul>
-								If this field is not present then, it is a description of the POI.
-							</li>
-						</ul>
-						<li><code class="primary">category</code> - POITermType - categorical classification of the POI;</li>
-						<ul>
-							<li><code class="primary">term</code> - String - either a category or a tag;</li>							
-							<li><code class="primary">value</code> - String.</li>							
-						</ul>
-						<li><code class="primary">location</code> - Location - provides information about the POI's location;</li>
-						<ul>
-							Contains 0 or more of the following geometries:
+					<h3 style="margin-left: 10px">Points Of Interest, Events and Routes</h3>
+					<p class="space">
+						Each of the 3 resources follow the UML below. For further details go to <a target="_blank" href="http://www.w3.org/2010/POI/documents/Core/core-20111216.html#poi-data-model">W3C-POI WG</a>.
+						<img width=700px src="imgs/uml.png" />
+						Since the 3 resources inherit from the POI class, its properties are as follows:
+						<ul class="code">
+							<li><code class="primary">base</code> - String - base URI of the POI;</li>
+							<li><code class="primary">id</code>	- String - the ID of the POI;</li>						
+							<li><code class="primary">lang</code> - String - the default language of the POI;</li>						
+							<li><code class="primary">license</code> - POITermType - the license restrictions of the POI;</li>						
 							<ul>
-								<li><code class="primary">point</code>;</li>
-								<ul>
-									<li><code class="primary">Point</code> - Geometry - a single point (latitude and longitude);</li>		
+								<li><code class="primary">term</code> - String - to discreminate multiple licenses (e.g.: common, opensource);</li>
+								<li><code class="primary">value</code> - String.</li>
+							</ul>
+							<li><code class="primary">author</code> - POITermType - the author of the POI;</li>						
+							<ul>
+								<li><code class="primary">term</code> - String - to discreminate if the author is a primary, secondary, contributer, editor or publisher author;</li>
+								<li><code class="primary">value</code> - String.</li>
+							</ul>
+							<li><code class="primary">created</code> - Date - the date in which the POI was created (format: YYYY-MM-DD'T'hh:mm:ss.SSSSSSS'Z');</li>					
+							<li><code class="primary">updated</code> - Date - same format as created;</li>
+							<li><code class="primary">deleted</code> - Date - same format as created;</li>						
+							<li><code class="primary">label</code> - POITermType - a human-readable name of the POI. Multiple names are used for synonyms and multiple languages;</li>						
+							<ul>
+								<li><code class="primary">lang</code> - String - the language of the label;</li>
+								<li><code class="primary">term</code> - String - if it is the primary or secondary name;</li>
+								<li><code class="primary">value</code> - String.</li>
+							</ul>
+							<li><code class="primary">description</code> - POIBaseType - a human-readable description that can be discriminated with the language attribute;</li>			
+							<ul>
+								<li><code class="primary">lang</code> - String;</li>
+								<li><code class="primary">value</code> - String;</li>
+								<li><code class="primary">type</code> - String - to discretize the type of description. Its values may be the following: 
 									<ul>
-										<li><code class="primary">srsName</code> - String - coordinate reference system;</li>
-										<li><code class="primary">posList</code> - String - the coordinates set.</li>
+										<li>X-citysdk/price - containing, e.g., a price of entrance;</li> 
+										<li>X-citysdk/waiting-time - indicating the waiting time in seconds;</li>
+										<li>X-citysdk/occupation - containing the occupation of the POI, between 0 and 100;</li>
+										<li>X-citysdk/accessibility-textual - accessibility information in human-readable format;</li>
+										<li>X-citysdk/accessibility-properties - containing machine-readable accessibility information.</li> 
+									</ul>
+									If this field is not present then, it is a description of the POI.
+								</li>
+							</ul>
+							<li><code class="primary">category</code> - POITermType - categorical classification of the POI;</li>
+							<ul>
+								<li><code class="primary">term</code> - String - either a category or a tag;</li>							
+								<li><code class="primary">value</code> - String.</li>							
+							</ul>
+							<li><code class="primary">location</code> - Location - provides information about the POI's location;</li>
+							<ul>
+								Contains 0 or more of the following geometries:
+								<ul>
+									<li><code class="primary">point</code>;</li>
+									<ul>
+										<li><code class="primary">Point</code> - Geometry - a single point (latitude and longitude);</li>		
+										<ul>
+											<li><code class="primary">srsName</code> - String - coordinate reference system;</li>
+											<li><code class="primary">posList</code> - String - the coordinates set.</li>
+										</ul>
+									</ul>
+									<li><code class="primary">line</code>;</li>
+									<ul>
+										<li><code class="primary">LineString</code>	- Geometry - a set of two points;</li>
+										<ul>
+											<li><code class="primary">srsName</code> - String;</li>
+											<li><code class="primary">posList</code> - String.</li>
+										</ul>
+									</ul>
+									<li><code class="primary">polygon</code>;</li>
+									<ul>
+										<li><code class="primary">SimplePolygon</code> - Geometry - a list of coordinates;</li>
+										<ul>
+											<li><code class="primary">srsName</code> - String;</li>										
+											<li><code class="primary">posList</code> - String.</li>
+										</ul>
 									</ul>
 								</ul>
-								<li><code class="primary">line</code>;</li>
+								<li><code class="primary">address</code> - POIBaseType - the civic address of the POI;</li>
 								<ul>
-									<li><code class="primary">LineString</code>	- Geometry - a set of two points;</li>
-									<ul>
-										<li><code class="primary">srsName</code> - String;</li>
-										<li><code class="primary">posList</code> - String.</li>
-									</ul>
+									<li><code class="primary">type</code> - String - text/vCard;</li>
+									<li><code class="primary">value</code> - String - address in vCard format.</li>
 								</ul>
-								<li><code class="primary">polygon</code>;</li>
+								<li><code class="primary">relationship</code>- Relationship - establishes relations between POIs;</li>
 								<ul>
-									<li><code class="primary">SimplePolygon</code> - Geometry - a list of coordinates;</li>
-									<ul>
-										<li><code class="primary">srsName</code> - String;</li>										
-										<li><code class="primary">posList</code> - String.</li>
-									</ul>
+									<li><code class="primary">term</code> - String - possible terms: equals, disjoint, intersects, crosses, overlaps, within, contains, touches;</li>
+									<li><code class="primary">base</code> - String;</li>
+									<li><code class="primary">targetPOI</code> - String - the ID of a Point of Interest; or <code class="primary">targetEvent</code> - String the ID of an Event.</li>
 								</ul>
 							</ul>
-							<li><code class="primary">address</code> - POIBaseType - the civic address of the POI;</li>
+							<li><code class="primary">time</code> - POITermType - a fixed time or sequence of times using iCalendar;</li>
 							<ul>
-								<li><code class="primary">type</code> - String - text/vCard;</li>
-								<li><code class="primary">value</code> - String - address in vCard format.</li>
+								<li><code class="primary">term</code> - String - possible terms: start, end, open and instant;</li>	
+								<li><code class="primary">type</code> - String - text/calendar;</li>							
+								<li><code class="primary">value</code> - String - the time in iCalendar format.</li>							
 							</ul>
-							<li><code class="primary">relationship</code>- Relationship - establishes relations between POIs;</li>
+							<li><code class="primary">link</code> - POITermType - a link to another POI or web resource;</li>						
 							<ul>
-								<li><code class="primary">term</code> - String - possible terms: equals, disjoint, intersects, crosses, overlaps, within, contains, touches;</li>
+								<li><code class="primary">term</code> - String - possible terms: alternate, canonical, copyright, describedby, edit, enclosure, icon, latest-version, license, related, search, parent, child, historic and future;</li>						
+								<li><code class="primary">type</code> - String - the MIME type;</li>							
+								<li><code class="primary">href</code> - String - the absolute path of the link;</li>							
 								<li><code class="primary">base</code> - String;</li>
-								<li><code class="primary">targetPOI</code> - String - the ID of a Point of Interest; or <code class="primary">targetEvent</code> - String the ID of an Event.</li>
+								<li><code class="primary">id</code>	- String.</li>		
 							</ul>
 						</ul>
-						<li><code class="primary">time</code> - POITermType - a fixed time or sequence of times using iCalendar;</li>
-						<ul>
-							<li><code class="primary">term</code> - String - possible terms: start, end, open and instant;</li>	
-							<li><code class="primary">type</code> - String - text/calendar;</li>							
-							<li><code class="primary">value</code> - String - the time in iCalendar format.</li>							
+					</p>
+					<div class="slider">
+						<h5 class="header" style="margin-left: 10px"><span>[+]</span><a href="#" style="color:#000000; text-decoration: none"> POI JSON Example</a></h5>
+						<div class="internal" style="overflow:hidden">
+							<pre id="poi-json-example" class="primary">
+								<script type="text/javascript">
+								$("#poi-json-example").html(syntaxHighlight(poiJson));
+								</script>
+							</pre>
+						</div>
+					</div>
+					<div class="slider">
+						<h5 class="header" style="margin-left: 10px"><span>[+]</span><a href="#" style="color:#000000; text-decoration: none"> Event JSON Example</a></h5>
+						<div class="internal" style="overflow:hidden">
+							<pre id="event-json-example" class="primary">
+								<script type="text/javascript">
+								$("#event-json-example").html(syntaxHighlight(eventJson));
+								</script>
+							</pre>
+						</div>
+					</div>
+					<p class="space">
+						There is however some minimizations in the format for Points of Interest and Routes. The differences of the Points of Interest format reside in the following:
+						<ul class="code">
+							<li>The <code class="primary">description</code> field will only contain a description and no more data (such as prices or waiting time);</li>
+							<li>The <code class="primary">location</code> field will only contain a geometry describing its coordinates;</li>
+							The <code class="primary">links</code> field will only contain a thumbnail and no other links relating to multimedia or alternative <li>identifications.</li>
 						</ul>
-						<li><code class="primary">link</code> - POITermType - a link to another POI or web resource;</li>						
-						<ul>
-							<li><code class="primary">term</code> - String - possible terms: alternate, canonical, copyright, describedby, edit, enclosure, icon, latest-version, license, related, search, parent, child, historic and future;</li>						
-							<li><code class="primary">type</code> - String - the MIME type;</li>							
-							<li><code class="primary">href</code> - String - the absolute path of the link;</li>							
-							<li><code class="primary">base</code> - String;</li>
-							<li><code class="primary">id</code>	- String.</li>		
+					</p>
+					<p class="space">
+						Routes is a special case of a POI, that is, it contains in its properties a list of Points of Interest with minimal description. So, alongside the presented properties (except for <code class="primary">location</code> and <code class="primary">time</code>),
+						it contains an extra one called <code class="primary">pois</code>.
+					</p>
+					<p class="space">
+						So, and just like the Points of Interest, Routes also has a minimal description. Such description will not contain the <code class="primary">pois</code> property.			
+					</p>
+					<h3 style="margin-left: 10px">Lists of Points Of Interest, Events and Routes</h3>
+					<p class="space">
+						Each of these elements have their own lists. The properties have the following names:
+						<ul class="code">
+							<li><code class="primary">poi</code> - will contain an array of Points of Interest in minimal description;</li>	
+							<li><code class="primary">event</code> - will contain an array of Events;</li>		
+							<li><code class="primary">routes</code> - will contain an array of Routes in minimal description.</li>	
 						</ul>
-					</ul>
-				</p>
-				<div class="slider">
-					<h5 class="header" style="margin-left: 10px"><span>[+]</span><a href="#" style="color:#000000; text-decoration: none"> POI JSON Example</a></h5>
-					<div class="internal" style="overflow:hidden">
-						<pre id="poi-json-example" class="primary">
-							<script type="text/javascript">
-							$("#poi-json-example").html(syntaxHighlight(poiJson));
-							</script>
-						</pre>
+					</p>
+					<p class="space">
+						There is also a special case (used by find-code resource) in which the 3 types of lists coexist. Its format is simply a JSON Object containing the 3 aforementioned names, if such search returns values for each of the 3 types.
+					</p>
+					<h3 style="margin-left: 10px">Categories</h3>
+					<p class="space">
+						The Categories (not to be mistaken with the <code class="primary">category</code> property) represents the available categories in a given server. Its properties have a recursive nature since a Category can contain itself. So, the Categories are represented as an array of <code class="primary">categories</code> with the following properties:
+						<ul class="code">
+							<li><code class="primary">label</code> - having the same properties of the POI;</li>
+							<li><code class="primary">id</code>	- similar to POI;</li>		
+							<li><code class="primary">term</code> - similar to POI;</li>	
+							<li><code class="primary">lang</code> - similar to POI;</li>			
+							<li><code class="primary">categories</code>	- to allow recursiveness and representing sub-categories of a given category.</li>
+						</ul>
+					</p>
+					<div class="slider">
+						<h5 class="header" style="margin-left: 10px"><span>[+]</span><a href="#" style="color:#000000; text-decoration: none"> Categories JSON Example</a></h5>
+						<div class="internal" style="overflow:hidden">
+							<pre id="cat-json-example" class="primary">
+								<script type="text/javascript">
+								$("#cat-json-example").html(syntaxHighlight(categoryJson));
+								</script>
+							</pre>
+						</div>
 					</div>
-				</div>
-				<p class="space">
-					There is however some minimizations in the format for Points of Interest and Routes. The differences of the Points of Interest format reside in the following:
-					<ul class="code">
-						<li>The <code class="primary">description</code> field will only contain a description and no more data (such as prices or waiting time);</li>
-						<li>The <code class="primary">location</code> field will only contain a geometry describing its coordinates;</li>
-						The <code class="primary">links</code> field will only contain a thumbnail and no other links relating to multimedia or alternative <li>identifications.</li>
-					</ul>
-				</p>
-				<p class="space">
-					Routes is a special case of a POI, that is, it contains in its properties a list of Points of Interest with minimal description. So, alongside the presented properties (except for <code class="primary">location</code> and <code class="primary">time</code>),
-					it contains an extra one called <code class="primary">pois</code>.
-				</p>
-				<p class="space">
-					So, and just like the Points of Interest, Routes also has a minimal description. Such description will not contain the <code class="primary">pois</code> property.			
-				</p>
-				<h3 style="margin-left: 10px">Lists of Points Of Interest, Events and Routes</h3>
-				<p class="space">
-					Each of these elements have their own lists. The properties have the following names:
-					<ul class="code">
-						<li><code class="primary">poi</code> - will contain an array of Points of Interest in minimal description;</li>	
-						<li><code class="primary">event</code> - will contain an array of Events;</li>		
-						<li><code class="primary">routes</code> - will contain an array of Routes in minimal description.</li>	
-					</ul>
-				</p>
-				<p class="space">
-					There is also a special case (used by find-code resource) in which the 3 types of lists coexist. Its format is simply a JSON Object containing the 3 aforementioned names, if such search returns values for each of the 3 types.
-				</p>
-				<h3 style="margin-left: 10px">Categories</h3>
-				<p class="space">
-					The Categories (not to be mistaken with the <code class="primary">category</code> property) represents the available categories in a given server. Its properties have a recursive nature since a Category can contain itself. So, the Categories are represented as an array of <code class="primary">categories</code> with the following properties:
-					<ul class="code">
-						<li><code class="primary">label</code> - having the same properties of the POI;</li>
-						<li><code class="primary">link</code> - having the same properties of the POI;</li>
-						<li><code class="primary">id</code>	- similar to POI;</li>				
-						<li><code class="primary">categories</code>	- to allow recursiveness and representing sub-categories of a given category.</li>
-					</ul>
-				</p>
-				<div class="slider">
-					<h5 class="header" style="margin-left: 10px"><span>[+]</span><a href="#" style="color:#000000; text-decoration: none"> Categories JSON Example</a></h5>
-					<div class="internal" style="overflow:hidden">
-						<pre id="cat-json-example" class="primary">
-							<script type="text/javascript">
-							$("#cat-json-example").html(syntaxHighlight(categoryJson));
-							</script>
-						</pre>
+					<h3 style="margin-left: 10px">Tags</h3>
+					<p class="space">The Tags represent the available tags in a given server. It is an array of <code class="primary">tag</code> with the name <code class="primary">tags</code>. Each tag is an array of two properties:
+						<ul class="code">
+							<li><code class="primary">lang</code> - the language of the tag;</li>
+							<li><code class="primary">value</code> - the actual tag name.</li>
+						</ul>
+					</p>
+					<div class="slider">
+						<h5 class="header" style="margin-left: 10px"><span>[+]</span><a href="#" style="color:#000000; text-decoration: none"> Tags JSON Example</a></h5>
+						<div class="internal" style="overflow:hidden;">
+							<pre id="tag-json-example" class="primary">
+								<script type="text/javascript">
+								$("#tag-json-example").html(syntaxHighlight(tagJson));
+								</script>
+							</pre>
+						</div>
 					</div>
-				</div>
-				<h3 style="margin-left: 10px">Tags</h3>
-				<p class="space">The Tags represent the available tags in a given server. It is an array of <code class="primary">tag</code> with the name <code class="primary">tags</code>. Each tag is an array of two properties:
-					<ul class="code">
-						<li><code class="primary">lang</code> - the language of the tag;</li>
-						<li><code class="primary">value</code> - the actual tag name.</li>
-					</ul>
-				</p>
-				<div class="slider">
-					<h5 class="header" style="margin-left: 10px"><span>[+]</span><a href="#" style="color:#000000; text-decoration: none"> Tags JSON Example</a></h5>
-					<div class="internal" style="overflow:hidden;">
-						<pre id="tag-json-example" class="primary">
-							<script type="text/javascript">
-							$("#tag-json-example").html(syntaxHighlight(tagJson));
-							</script>
-						</pre>
-					</div>
-				</div>
-				<div id="backtop"></div>
-			</div><!-- content -->
+					<h3 style="margin-left: 10px">Delegation model</h3>
+					<p class="space">
+						As described before, the link field in a POI may contain the term <b>described-by</b>. This term and its corresponding href allows an application to fetch more granular data from other data sources. As such and as shown in the following diagram, one can travel from a world-wide directory (which provides a POI of a city) and from there, receive data about a POI, Event or Itinerary. These data models can further be described by more specific servers and their endpoints are provided by the <b>described-by</b> term.
+						<p>
+							<img src="imgs/delegation.png" width=300px style="display: block; margin-left: auto; margin-right: auto">
+						</p>
+					</p>
+					<div id="backtop"></div>
+				</div><!-- content -->
+			</div>
+			<div id="footer"></div>
 		</div>
-		<div id="footer"></div>
-	</div>
-</body>
-</html>
+	</body>
+	</html>

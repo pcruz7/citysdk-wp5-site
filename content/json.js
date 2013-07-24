@@ -1,327 +1,387 @@
 var poiJson = {
-   base:"http://citysdk.com/poi/",
-   id:"1",
-   created:"2013-01-25T19:43:37.000Z",
-   updated:"2011-07-28T19:44:37.000Z",
-   author:{
-      term:"primary",
-      value:"CML"
+   id: "51d2a846723e8e09d8d6fca0",
+   base: "http://tourism.citysdk.cm-lisboa.pt/pois/",
+   lang: "pt-PT",
+   created: "2012-05-18T11:56:08.0000000Z",
+   author: {
+      term: "primary",
+      value: "CitySDK"
    },
-   license:{
-      term:"primary",
-      value:"open-data"
+   license: {
+      term: "primary",
+      value: "open-data"
    },
-   lang:"en_GB",
-   label:[
+   location: {
+      point: [
       {
-         lang:"pt_PT",
-         term:"primary",
-         value:"Museu Calouste Gulbenkian"
+         Point: {
+            posList: "38.7076928974132 -9.19773100280971",
+            srsName: "http://www.opengis.net/def/crs/EPSG/0/4326"
+         },
+         term: "entrance"
       },
       {
-         lang:"en_GB",
-         term:"primary",
-         value:"Calouste Gulbenkian Museum"
+         Point: {
+            posList: "38.7076230136219 -9.19812023578762",
+            srsName: "http://www.opengis.net/def/crs/EPSG/0/4326"
+         },
+         term: "entrance"
       }
-   ],
-   description:[
-      {
-         lang:"pt_PT",
-         value:"Museu Calouste Gulbenkian e um museu em Lisboa, Portugal, contendo uma coleccao de antiga e alguma arte moderna."
-      },
-      {
-         lang:"en_GB",
-         value:"Museu Calouste Gulbenkian is a museum in Lisbon, Portugal, containing a collection of ancient, and some modern art."
-      },
-      {
-         type:"X-citysdk/price",
-         lang:"pt_PT",
-         value:"Museu: 4 euro"
-      },
-      {
-         type:"X-citysdk/price",
-         lang:"en_GB",
-         value:"Museum: 4 euro"
-      },
-      {
-         type:"X-citysdk/waiting-time",
-         value:"7200"
-      },
-      {
-         type:"X-citysdk/occupation",
-         value:"30"
-      }
-   ],
-   category:[
-      {
-         term:"category",
-         value:"Museum"
-      },
-      {
-         term:"category",
-         value:"Park"
-      },
-      {
-         term:"tag",
-         value:"culture"
-      },
-      {
-         term:"tag",
-         value:"nature"
-      }
-   ],
-   location:{
-      point:[
-         {
-            term:"entrance",
-            Point:{
-               srsName:"http://www.opengis.net/def/crs/EPSG/0/4326",
-               posList:"38.738369 -9.154962"
-            }
-         }
       ],
-      address:{
-         type:"text/vcard",
-         value:"BEGIN:VCARD\r\nN:Gulbenkian;Museu;Calouste;Museu Calouste Gulbenkian;\r\nADR;INTL;PARCEL;WORK:;;Avenida Berna 45 A;Lisboa;Lisboa;1067-001;Portugal\r\nEMAIL;INTERNET:none\r\nTEL;WORK:217 823 000\r\nTEL;FAX;WORK:217 823 032\r\nURL;WORK:www.museu.gulbenkian.pt\r\nEND:VCARD"
+      address: {
+         value: "BEGIN:VCARD N:;Palácio Nacional da Ajuda;;;;ADR;INTL:;Largo da Ajuda ;;Lisboa;;1300 - 018;Portugal TEL;WORK:+351 213 637 095 EMAIL; INTERNET:pnajuda@imc-ip.pt URL; WORK:www.palaciodaajuda.imc-ip.pt/ TITLE: ROLE: ORG: END:VCARD ",
+         type: "text/vcard"
       },
-      relationship:[
-         {
-            term:"within",
-            base:"http://citysdk.com/poi/",
-            targetPOI:"0"
-         }
+      relationship: [
+      {
+         targetPOI: "51d2a838723e8e09d8d6fafc",
+         term: "within",
+         base: "http://tourism.citysdk.cm-lisboa.pt/pois/"
+      }
       ]
    },
-   time:[
-      {
-         term:"open",
-         type:"text/calendar",
-         value:"BEGIN:VCALENDAR\r\nMETHOD:PUBLISH\r\nVERSION:2.0\r\nPRODID:-//Apple Inc.//Mac OS X 10.8.2//en\r\nX-WR-TIMEZONE:Europe/Lisbon\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Lisbon\r\nBEGIN:STANDARD\r\nTZOFFSETFROM:+0100\r\nRRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU\r\nDTSTART:19961027T020000\r\nTZNAME:WET\r\nTZOFFSETTO:+0000\r\nEND:STANDARD\r\nBEGIN:DAYLIGHT\r\nTZOFFSETFROM:+0000\r\nRRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU\r\nDTSTART:19970330T010000\r\nTZNAME:WEST\r\nTZOFFSETTO:+0100\r\nEND:DAYLIGHT\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nCREATED:20130128T180402Z\r\nUID:DF278B31-C100-468A-89B9-E06E179C18FC\r\nDTEND;TZID=Europe/Lisbon:20130106T174500\r\nRRULE:FREQ=WEEKLY;INTERVAL=1\r\nTRANSP:OPAQUE\r\nSUMMARY:Gulbenkian\r\nDTSTART;TZID=Europe/Lisbon:20130101T100000\r\nDTSTAMP:20130128T181107Z\r\nLOCATION:Avenida Berna 45 A 1067-001, Lisboa\r\nSEQUENCE:15\r\nEND:VEVENT\r\nEND:VCALENDAR"
-      }
+   label: [
+   {
+      term: "primary",
+      value: "Palácio Nacional da Ajuda"
+   },
+   {
+      term: "note",
+      value: "SG/DMC "
+   },
+   {
+      term: "note",
+      value: "Classificação como Monumento Nacional, pelo Decreto de 16-06-1910, DG n.º 136, de 23-06-1910"
+   }
    ],
-   link:[
-      {
-         term:"alternate",
-         href:"http://www.gulbenkian.pt/"
-      },
-      {
-         term:"related",
-         type:"application/vnd.android.package-archive",
-         href:"http://link-to-related-apps.com/apps/1234"
-      },
-      {
-         term:"related",
-         type:"image/jpeg",
-         href:"http://c8.quickcachr.fotos.sapo.pt/i/b6606d8e3/7900303_YN3SJ.jpeg"
-      },
-      {
-         term:"icon",
-         type:"image/jpeg",
-         href:"http://ccm.ddcdn.com/ext/photo-t/03/04/d6/df/gulbenkian-museum-museu.jpg"
-      },
-      {
-         term:"describedby",
-         href:"http://museumX.org/citysdk/",
-         base:"http://museumX.org/citysdk/poi",
-         id:"0"
-      },
-      {
-         term:"self",
-         id:"1",
-         base:"http://link-to-alternative-ids.com/qrcode/"
-      },
-      {
-         term:"parent",
-         id:"2345"
-      },
-      {
-         term:"child",
-         id:"0"
-      }
+   description: [
+   {
+      value: "Mandado edificar por ordem do príncipe regente, D. João, foi lançada a primeira pedra em 1796, com projeto barroco de Manuel Caetano de Sousa. Porém o espírito neoclássico impõe novas regras e a obra recomeça em 1802, já com planos de Francisco Xavier Fabri e José da Costa e Silva. O Palácio tornou-se residência da Família Real Portuguesa a partir de 1861: D. Luís I (1833-1889), sua mulher D. Maria Pia de Saboia (1847-1911), seus filhos os príncipes D. Carlos (1863-1908) e D. Afonso (1865-1920); após a proclamação da República, em 1910, foi encerrado, reabrindo em 1938 como museu. Alberga importantes coleções do século XV até ao século XX, principalmente de artes decorativas ¿ ourivesaria, pintura, escultura, mobiliário, têxteis (tapeçarias, tapetes e outros), cerâmica (porcelanas e faianças), luminária, vidros, etc. No interior há a destacar, entre as numerosas salas do Palácio, no piso térreo: Sala dos Archeiros com pinturas no teto e sobreportas representando respetivamente as ¿Armas reais portuguesas¿ e ¿Panóplias¿, Sala de Espera, com a ¿Alegoria do desejado regresso de D. João VI ao reino¿ da autoria de Cirilo Volkmar Machado e de Manuel Piolti, cerca de 1814, Sala do Despacho com tapeçarias do século XVIII, da série ¿História de Alexandre¿, atribuídas à manufatura francesa Aubusson e Sala da Música, cujo teto tem pintadas as armas de Portugal, da Casa de Bragança, e das Principais Ordens Militares Portuguesas, concebido por Joaquim Possidónio Narciso da Silva entre 1863-1865. No andar nobre: Sala Chinesa onde D. Luís reuniu as suas coleções de peças oriundas da China e do Japão, Sala das Senhoras do Corpo Diplomático, com tapeçarias da série ¿Costumes Turcos¿, da Manufatura Gobelin, do século XVIII, Sala do Trono, com teto pintado com uma ¿Alegoria da Virtude Heroica¿ , por Manuel Piolti e Máximo Paulino dos Reis, Sala dos Jantares Grandes, com aparadores, espelhos e tribuna da autoria do entalhador Leandro Braga, Sala de Baile, Sala D. João IV e a Sala dos Embaixadores, de planta elíptica com chão em mármore preto e branco da firma Moreira Rato, de 1891. O Palácio tem vindo a ser utilizado, desde o tempo da Monarquia até aos dias de hoje para a realização das cerimónias de Estado. Dispõe de uma loja onde podem ser adquiridas publicações e reproduções de peças das coleções reais. ",
+      lang: "pt-PT"
+   },
+   {
+      value: "Classificado como Monumento Nacional,foi construído após o terramoto de 1755 para substituir a ''Real Barraca'',assim designada por ser de madeira.O projecto inicial (1795),de Manuel Caetano de Sousa,sofreu uma significativa alteração com o novo projecto (1802),de inspiração neoclássica em cantaria lavrada,da autoria dos arqs. Francisco Xavier Fabri e José da Costa e Silva.O Palácio foi habitado com muitas interrupções,e mesmo inacabado funcionou como Paço Real a partir de D. Luis I (1833-1889),que aí se instalou definitivamente.No vestíbulo,merecem destaque as 47 estátuas assinadas por artistas portugueses.Encerrado após a implantação da República,o interior do Palácio foi musealizado,a partir de 1968,oferecendo um importante acervo de mobiliário,ourivesaria,pratas e joalharia,com destaque para a colecção das Jóias da Coroa Portuguesa.Funcionam,ainda,aí serviços e organismos ligados ao Ministério da Cultura. ",
+      lang: "pt-PT"
+   }
+   ],
+   category: [
+   {
+      term: "category",
+      value: "Unidade de Intervenção Territorial Ocidental",
+      lang: "pt-PT"
+   },
+   {
+      term: "category",
+      value: "Cultura - Museus",
+      lang: "pt-PT"
+   },
+   {
+      term: "category",
+      value: "Património - Arquitectura Nobre",
+      lang: "pt-PT"
+   },
+   {
+      term: "category",
+      value: "Património - Monumentos Nacionais",
+      lang: "pt-PT"
+   }
+   ],
+   time: [
+   {
+      term: "open",
+      value: "10h00-17h30 (última entrada às 17h00)<br />Encerra: 4ªf, 1 janeiro, domingo de Páscoa, 1 maio e 25 dezembro (encerra no mês de fevereiro para manutenção) "
+   }
+   ],
+   link: [
+   {
+      term: "related",
+      href: "http://www.cm-lisboa.pt/uploads/pics/tt_address/lxi-520-01.jpg",
+      type: "image/png"
+   },
+   {
+      term: "related",
+      href: "http://www.cm-lisboa.pt/uploads/pics/tt_address/lxi-520-02.jpg",
+      type: "image/png"
+   },
+   {
+      term: "related",
+      href: "http://www.cm-lisboa.pt/uploads/pics/tt_address/lxi-520-03.jpg",
+      type: "image/png"
+   },
+   {
+      term: "related",
+      href: "http://www.cm-lisboa.pt/uploads/pics/tt_address/map-520.jpg",
+      type: "image/png"
+   },
+   {
+      term: "source",
+      href: "www.palaciodaajuda.imc-ip.pt/",
+      type: "text/html"
+   },
+   {
+      term: "alternative",
+      value: "www.palaciodaajuda.imc-ip.pt/"
+   },
+   {
+      term: "related",
+      href: "http://www.cm-lisboa.pt/uploads/pics/tt_address/lxi-2610-01.jpg",
+      type: "image/png"
+   },
+   {
+      term: "related",
+      href: "http://www.cm-lisboa.pt/uploads/pics/tt_address/lxi-2610-02.jpg",
+      type: "image/png"
+   },
+   {
+      term: "related",
+      href: "http://www.cm-lisboa.pt/uploads/pics/tt_address/lxi-2610-03.jpg",
+      type: "image/png"
+   },
+   {
+      term: "related",
+      href: "http://www.cm-lisboa.pt/uploads/pics/tt_address/lxi-2610-04.jpg",
+      type: "image/png"
+   },
+   {
+      term: "related",
+      href: "http://www.cm-lisboa.pt/uploads/pics/tt_address/lxi-2610-05.jpg",
+      type: "image/png"
+   },
+   {
+      term: "related",
+      href: "http://www.cm-lisboa.pt/uploads/pics/tt_address/lxi-2610-06.jpg",
+      type: "image/png"
+   },
+   {
+      term: "related",
+      href: "http://www.cm-lisboa.pt/uploads/pics/tt_address/lxi-2610-07.jpg",
+      type: "image/png"
+   },
+   {
+      term: "related",
+      href: "http://www.cm-lisboa.pt/uploads/pics/tt_address/map-2610.jpg",
+      type: "image/png"
+   }
    ]
 };
 
 var links = {
    "citysdk-tourism": [
-      {
-         "version": "1.0",
-         "_links": {
-            "find-poi": {
-               "href": "http://tourism.citysdk.cm-lisboa.pt/pois/search{?category,tag,complete,minimal,coords,limit,offset}",
-               "templated": "true"
-            },
-            "find-poi-relation": {
-               "href": "http://tourism.citysdk.cm-lisboa.pt/pois/{id}/search{?relation}",
-               "templated": "true"
-            },
-            "find-event": {
-               "href": "http://tourism.citysdk.cm-lisboa.pt/events/search{?category,tag,name,coords,limit,offset,time}",
-               "templated": "true"
-            },
-            "find-event-relation": {
-               "href": "http://tourism.citysdk.cm-lisboa.pt/events/{id}/search{?relation}",
-               "templated": "true"
-            },
-            "find-route": {
-               "href": "http://tourism.citysdk.cm-lisboa.pt/routes/search{?category,tag,name,coords,limit,offset}",
-               "templated": "true"
-            },
-            "find-categories": {
-               "href": "http://tourism.citysdk.cm-lisboa.pt/categories/search{?list,limit,offset}",
-               "templated": "true"
-            },
-            "find-code": {
-               "href": "http://tourism.citysdk.cm-lisboa.pt/search{?code}",
-               "templated": "true"
-            }
+   {
+      "version": "1.0",
+      "_links": {
+         "find-poi": {
+            "href": "http://tourism.citysdk.cm-lisboa.pt/pois/search{?category,tag,complete,minimal,coords,limit,offset}",
+            "templated": "true"
+         },
+         "find-poi-relation": {
+            "href": "http://tourism.citysdk.cm-lisboa.pt/pois/{id}/search{?relation}",
+            "templated": "true"
+         },
+         "find-event": {
+            "href": "http://tourism.citysdk.cm-lisboa.pt/events/search{?category,tag,name,coords,limit,offset,time}",
+            "templated": "true"
+         },
+         "find-event-relation": {
+            "href": "http://tourism.citysdk.cm-lisboa.pt/events/{id}/search{?relation}",
+            "templated": "true"
+         },
+         "find-route": {
+            "href": "http://tourism.citysdk.cm-lisboa.pt/routes/search{?category,tag,name,coords,limit,offset}",
+            "templated": "true"
+         },
+         "find-categories": {
+            "href": "http://tourism.citysdk.cm-lisboa.pt/categories/search{?list,limit,offset}",
+            "templated": "true"
+         },
+         "find-code": {
+            "href": "http://tourism.citysdk.cm-lisboa.pt/search{?code}",
+            "templated": "true"
          }
       }
+   }
    ]
 };
 
-var categoryJson = {
-   "categories":[
+var eventJson = 
+{
+   "id": "51d2a8e3723e8e09d8d70bc6",
+   "base": "http://tourism.citysdk.cm-lisboa.pt/events/",
+   "lang": "pt-PT",
+   "created": "2012-10-28T22:32:31.0000000Z",
+   "author": {
+      "term": "primary",
+      "href": "mailto:luis.carneiro@cm-lisboa.pt",
+      "value": "Filomena Proença"
+   },
+   "license": {
+      "term": "primary",
+      "value": "open-data"
+   },
+
+   "location": {
+      "point": [
       {
-         "id":"1",
-         "label":[
-            {
-               "term":"primary",
-               "lang":"pt_PT",
-               "value":"alojamento"
-            },
-            {
-               "term":"primary",
-               "lang":"en_GB",
-               "value":"housing"
-            }
-         ],
-         "link":[
-            {
-               "term":"icon",
-               "value":"iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAA75JREFUaIHtmF1oU3cYh58TsrapssVaHaWjLc1GnU2MlQ0kKlhN0dSWIhWKCIK1uZjgjR/RC69aQZRItSAMRWhRYdIqljQNYoa6kILrR/qBcy1p2UdrGIxt1Tlz2iRnF7qsZTp3ctL1sJ3n6v/P+745vyfnIyF6/iPoFztAutBE1IYmojY0EbWhiagNTURtaCJqQ5aIJEkeSZIeLlSYuQiCUCoIQvU/7ZcrMqXT6Y7LjyWfRCLxqZx+2ZfWZyC9qSf36FEKHQ5yiot5y2AAYPb5c36amODb7m5+dLv/dl6XmVkuN1da75F3nE7KDh9GEAS+CwR4ePYsUa8XgKwdO8jfuROL04lUX0+ouZnpS5fSduy0ieSfOYN1716GWluZOv7Xqy/q9TLu9TIO5J8+ja2piWGT6ZW9qZAWkbyTJ7Hs2cP9gwd51t7+xv6pY8f4pa+PTefOkYjFiJw4oTiDYhFDTQ1lTidfHDrEs/Z23t6/HykW42lb2yv759aDWVlscrv5+cEDoh6PohyKRSwuF6MeD79euwbA1pYWEvE4na8R2drSQkwU8bS18fTKFcY2b2aNy8WXiymSXVtLTlERvVu2JF8b9fko2rjxtTOjPh+FGzYk9+MHDmCamCCrulrRWVEkUrBrF5N9fUiiCMDqmzfJs1oxGI2U+f2E7PZ5/eZbt3jXbCZ72TKsPh9DDgeSKPK4v5+CujrGFktkpdnMyMWLALzf2srSFSvod7uxnz9PfGaGNV1dDFdVAVBy9SrZy5fTe+oUFRcuoNPrWX3jBl/V1jJ55w5mp5MxBVkUiRiMRqY7Ol6sc3PpramhsLERgOHKSixzPuEMo/FFvakJgFBFBZauLgCmOzrIdrmURFF4s+t0JCIRAEaqqtCvXcu6+nrC9+6hy8tjpPrPn0rJ+r59TIZCCDk5jLw8W4lIBHQ6RVHS+81eXk58dpbvb99maWUlTy5fnlc32u1IksQPAwMscTiSTzoAQeGxFYnERZEMm42Znh4AzA0NTA0O8ls4zEeNjQTmiAiZmVgaGng8NMSTcBjrkSMEX4pk2GzMRqNKoigT8RcXz9vfLy1NrgOdnfNqkihyd9Wq5D7Y3Jxcz/T08LnJpCSKMpF1fj8F69crCvAH3wSDDG7blvK8IpEBu50BJW+QRlIW+fD6dT7Yvj2dWRjr7ubr3btTmk1Z5FFdHY9SHV4AZIkIgvDex4HAQmVJsrKk5BNBEJbImZErUiUv0r/H//PvIDWjiagNTURtaCJqQxNRG5qI2tBE1MbvCGY2qzljwq0AAAAASUVORK5CYII=",
-               "type":"image/png"
-            }
-         ],
-         "categories":[
-            {
-               "id":"121",
-               "link":[
-                  {
-                     "term":"icon",
-                     "value":"iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAA75JREFUaIHtmF1oU3cYh58TsrapssVaHaWjLc1GnU2MlQ0kKlhN0dSWIhWKCIK1uZjgjR/RC69aQZRItSAMRWhRYdIqljQNYoa6kILrR/qBcy1p2UdrGIxt1Tlz2iRnF7qsZTp3ctL1sJ3n6v/P+745vyfnIyF6/iPoFztAutBE1IYmojY0EbWhiagNTURtaCJqQ5aIJEkeSZIeLlSYuQiCUCoIQvU/7ZcrMqXT6Y7LjyWfRCLxqZx+2ZfWZyC9qSf36FEKHQ5yiot5y2AAYPb5c36amODb7m5+dLv/dl6XmVkuN1da75F3nE7KDh9GEAS+CwR4ePYsUa8XgKwdO8jfuROL04lUX0+ouZnpS5fSduy0ieSfOYN1716GWluZOv7Xqy/q9TLu9TIO5J8+ja2piWGT6ZW9qZAWkbyTJ7Hs2cP9gwd51t7+xv6pY8f4pa+PTefOkYjFiJw4oTiDYhFDTQ1lTidfHDrEs/Z23t6/HykW42lb2yv759aDWVlscrv5+cEDoh6PohyKRSwuF6MeD79euwbA1pYWEvE4na8R2drSQkwU8bS18fTKFcY2b2aNy8WXiymSXVtLTlERvVu2JF8b9fko2rjxtTOjPh+FGzYk9+MHDmCamCCrulrRWVEkUrBrF5N9fUiiCMDqmzfJs1oxGI2U+f2E7PZ5/eZbt3jXbCZ72TKsPh9DDgeSKPK4v5+CujrGFktkpdnMyMWLALzf2srSFSvod7uxnz9PfGaGNV1dDFdVAVBy9SrZy5fTe+oUFRcuoNPrWX3jBl/V1jJ55w5mp5MxBVkUiRiMRqY7Ol6sc3PpramhsLERgOHKSixzPuEMo/FFvakJgFBFBZauLgCmOzrIdrmURFF4s+t0JCIRAEaqqtCvXcu6+nrC9+6hy8tjpPrPn0rJ+r59TIZCCDk5jLw8W4lIBHQ6RVHS+81eXk58dpbvb99maWUlTy5fnlc32u1IksQPAwMscTiSTzoAQeGxFYnERZEMm42Znh4AzA0NTA0O8ls4zEeNjQTmiAiZmVgaGng8NMSTcBjrkSMEX4pk2GzMRqNKoigT8RcXz9vfLy1NrgOdnfNqkihyd9Wq5D7Y3Jxcz/T08LnJpCSKMpF1fj8F69crCvAH3wSDDG7blvK8IpEBu50BJW+QRlIW+fD6dT7Yvj2dWRjr7ubr3btTmk1Z5FFdHY9SHV4AZIkIgvDex4HAQmVJsrKk5BNBEJbImZErUiUv0r/H//PvIDWjiagNTURtaCJqQxNRG5qI2tBE1MbvCGY2qzljwq0AAAAASUVORK5CYII=",
-                     "type":"image/png"
-                  }
-               ],
-               "label":[
-                  {
-                     "term":"primary",
-                     "lang":"pt_PT",
-                     "value":"hoteis"
-                  },
-                  {
-                     "term":"primary",
-                     "lang":"en_GB",
-                     "value":"hotels"
-                  }
-               ]
-            },
-            {
-               "id":"123",
-               "link":[
-                  {
-                     "term":"icon",
-                     "value":"iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAA75JREFUaIHtmF1oU3cYh58TsrapssVaHaWjLc1GnU2MlQ0kKlhN0dSWIhWKCIK1uZjgjR/RC69aQZRItSAMRWhRYdIqljQNYoa6kILrR/qBcy1p2UdrGIxt1Tlz2iRnF7qsZTp3ctL1sJ3n6v/P+745vyfnIyF6/iPoFztAutBE1IYmojY0EbWhiagNTURtaCJqQ5aIJEkeSZIeLlSYuQiCUCoIQvU/7ZcrMqXT6Y7LjyWfRCLxqZx+2ZfWZyC9qSf36FEKHQ5yiot5y2AAYPb5c36amODb7m5+dLv/dl6XmVkuN1da75F3nE7KDh9GEAS+CwR4ePYsUa8XgKwdO8jfuROL04lUX0+ouZnpS5fSduy0ieSfOYN1716GWluZOv7Xqy/q9TLu9TIO5J8+ja2piWGT6ZW9qZAWkbyTJ7Hs2cP9gwd51t7+xv6pY8f4pa+PTefOkYjFiJw4oTiDYhFDTQ1lTidfHDrEs/Z23t6/HykW42lb2yv759aDWVlscrv5+cEDoh6PohyKRSwuF6MeD79euwbA1pYWEvE4na8R2drSQkwU8bS18fTKFcY2b2aNy8WXiymSXVtLTlERvVu2JF8b9fko2rjxtTOjPh+FGzYk9+MHDmCamCCrulrRWVEkUrBrF5N9fUiiCMDqmzfJs1oxGI2U+f2E7PZ5/eZbt3jXbCZ72TKsPh9DDgeSKPK4v5+CujrGFktkpdnMyMWLALzf2srSFSvod7uxnz9PfGaGNV1dDFdVAVBy9SrZy5fTe+oUFRcuoNPrWX3jBl/V1jJ55w5mp5MxBVkUiRiMRqY7Ol6sc3PpramhsLERgOHKSixzPuEMo/FFvakJgFBFBZauLgCmOzrIdrmURFF4s+t0JCIRAEaqqtCvXcu6+nrC9+6hy8tjpPrPn0rJ+r59TIZCCDk5jLw8W4lIBHQ6RVHS+81eXk58dpbvb99maWUlTy5fnlc32u1IksQPAwMscTiSTzoAQeGxFYnERZEMm42Znh4AzA0NTA0O8ls4zEeNjQTmiAiZmVgaGng8NMSTcBjrkSMEX4pk2GzMRqNKoigT8RcXz9vfLy1NrgOdnfNqkihyd9Wq5D7Y3Jxcz/T08LnJpCSKMpF1fj8F69crCvAH3wSDDG7blvK8IpEBu50BJW+QRlIW+fD6dT7Yvj2dWRjr7ubr3btTmk1Z5FFdHY9SHV4AZIkIgvDex4HAQmVJsrKk5BNBEJbImZErUiUv0r/H//PvIDWjiagNTURtaCJqQxNRG5qI2tBE1MbvCGY2qzljwq0AAAAASUVORK5CYII=",
-                     "type":"image/png"
-                  }
-               ],
-               "label":[
-                  {
-                     "term":"primary",
-                     "lang":"pt_PT",
-                     "value":"hostel"
-                  },
-                  {
-                     "term":"primary",
-                     "lang":"en_GB",
-                     "value":"hostel"
-                  }
-               ]
-            },
-            {
-               "id":"513",
-               "link":[
-                  {
-                     "term":"icon",
-                     "value":"iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAA75JREFUaIHtmF1oU3cYh58TsrapssVaHaWjLc1GnU2MlQ0kKlhN0dSWIhWKCIK1uZjgjR/RC69aQZRItSAMRWhRYdIqljQNYoa6kILrR/qBcy1p2UdrGIxt1Tlz2iRnF7qsZTp3ctL1sJ3n6v/P+745vyfnIyF6/iPoFztAutBE1IYmojY0EbWhiagNTURtaCJqQ5aIJEkeSZIeLlSYuQiCUCoIQvU/7ZcrMqXT6Y7LjyWfRCLxqZx+2ZfWZyC9qSf36FEKHQ5yiot5y2AAYPb5c36amODb7m5+dLv/dl6XmVkuN1da75F3nE7KDh9GEAS+CwR4ePYsUa8XgKwdO8jfuROL04lUX0+ouZnpS5fSduy0ieSfOYN1716GWluZOv7Xqy/q9TLu9TIO5J8+ja2piWGT6ZW9qZAWkbyTJ7Hs2cP9gwd51t7+xv6pY8f4pa+PTefOkYjFiJw4oTiDYhFDTQ1lTidfHDrEs/Z23t6/HykW42lb2yv759aDWVlscrv5+cEDoh6PohyKRSwuF6MeD79euwbA1pYWEvE4na8R2drSQkwU8bS18fTKFcY2b2aNy8WXiymSXVtLTlERvVu2JF8b9fko2rjxtTOjPh+FGzYk9+MHDmCamCCrulrRWVEkUrBrF5N9fUiiCMDqmzfJs1oxGI2U+f2E7PZ5/eZbt3jXbCZ72TKsPh9DDgeSKPK4v5+CujrGFktkpdnMyMWLALzf2srSFSvod7uxnz9PfGaGNV1dDFdVAVBy9SrZy5fTe+oUFRcuoNPrWX3jBl/V1jJ55w5mp5MxBVkUiRiMRqY7Ol6sc3PpramhsLERgOHKSixzPuEMo/FFvakJgFBFBZauLgCmOzrIdrmURFF4s+t0JCIRAEaqqtCvXcu6+nrC9+6hy8tjpPrPn0rJ+r59TIZCCDk5jLw8W4lIBHQ6RVHS+81eXk58dpbvb99maWUlTy5fnlc32u1IksQPAwMscTiSTzoAQeGxFYnERZEMm42Znh4AzA0NTA0O8ls4zEeNjQTmiAiZmVgaGng8NMSTcBjrkSMEX4pk2GzMRqNKoigT8RcXz9vfLy1NrgOdnfNqkihyd9Wq5D7Y3Jxcz/T08LnJpCSKMpF1fj8F69crCvAH3wSDDG7blvK8IpEBu50BJW+QRlIW+fD6dT7Yvj2dWRjr7ubr3btTmk1Z5FFdHY9SHV4AZIkIgvDex4HAQmVJsrKk5BNBEJbImZErUiUv0r/H//PvIDWjiagNTURtaCJqQxNRG5qI2tBE1MbvCGY2qzljwq0AAAAASUVORK5CYII=",
-                     "type":"image/png"
-                  }
-               ],
-               "description":[
-                  {
-                     "lang":"pt_PT",
-                     "value":"motel"
-                  },
-                  {
-                     "lang":"en_GB",
-                     "value":"motel"
-                  }
-               ]
-            }
-         ]
+         "Point": {
+            "posList": "38.7082157946685 -9.13853140205317",
+            "srsName": "http://www.opengis.net/def/crs/EPSG/0/4326"
+         },
+         "term": "entrance"
+      }
+      ],
+      "polygon": [
+      {
+         "SimplePolygon": {
+            "posList": "38.85 -8.9,38.85 -9.5,38.6 -9.5,38.6 -8.9, 38.85 -8.9",
+            "srsName": "http://www.opengis.net/def/crs/EPSG/0/4326"
+         },
+         "term": "entrance"
+      }
+      ],
+      "relationship": [
+      {
+         "targetPOI": "51d2a8be723e8e09d8d707e7",
+         "term": "within",
+         "base": "http://tourism.citysdk.cm-lisboa.pt/pois/"
       },
       {
-         "id":"2",
-         "link":[
-            {
-               "term":"icon",
-               "value":"iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAA75JREFUaIHtmF1oU3cYh58TsrapssVaHaWjLc1GnU2MlQ0kKlhN0dSWIhWKCIK1uZjgjR/RC69aQZRItSAMRWhRYdIqljQNYoa6kILrR/qBcy1p2UdrGIxt1Tlz2iRnF7qsZTp3ctL1sJ3n6v/P+745vyfnIyF6/iPoFztAutBE1IYmojY0EbWhiagNTURtaCJqQ5aIJEkeSZIeLlSYuQiCUCoIQvU/7ZcrMqXT6Y7LjyWfRCLxqZx+2ZfWZyC9qSf36FEKHQ5yiot5y2AAYPb5c36amODb7m5+dLv/dl6XmVkuN1da75F3nE7KDh9GEAS+CwR4ePYsUa8XgKwdO8jfuROL04lUX0+ouZnpS5fSduy0ieSfOYN1716GWluZOv7Xqy/q9TLu9TIO5J8+ja2piWGT6ZW9qZAWkbyTJ7Hs2cP9gwd51t7+xv6pY8f4pa+PTefOkYjFiJw4oTiDYhFDTQ1lTidfHDrEs/Z23t6/HykW42lb2yv759aDWVlscrv5+cEDoh6PohyKRSwuF6MeD79euwbA1pYWEvE4na8R2drSQkwU8bS18fTKFcY2b2aNy8WXiymSXVtLTlERvVu2JF8b9fko2rjxtTOjPh+FGzYk9+MHDmCamCCrulrRWVEkUrBrF5N9fUiiCMDqmzfJs1oxGI2U+f2E7PZ5/eZbt3jXbCZ72TKsPh9DDgeSKPK4v5+CujrGFktkpdnMyMWLALzf2srSFSvod7uxnz9PfGaGNV1dDFdVAVBy9SrZy5fTe+oUFRcuoNPrWX3jBl/V1jJ55w5mp5MxBVkUiRiMRqY7Ol6sc3PpramhsLERgOHKSixzPuEMo/FFvakJgFBFBZauLgCmOzrIdrmURFF4s+t0JCIRAEaqqtCvXcu6+nrC9+6hy8tjpPrPn0rJ+r59TIZCCDk5jLw8W4lIBHQ6RVHS+81eXk58dpbvb99maWUlTy5fnlc32u1IksQPAwMscTiSTzoAQeGxFYnERZEMm42Znh4AzA0NTA0O8ls4zEeNjQTmiAiZmVgaGng8NMSTcBjrkSMEX4pk2GzMRqNKoigT8RcXz9vfLy1NrgOdnfNqkihyd9Wq5D7Y3Jxcz/T08LnJpCSKMpF1fj8F69crCvAH3wSDDG7blvK8IpEBu50BJW+QRlIW+fD6dT7Yvj2dWRjr7ubr3btTmk1Z5FFdHY9SHV4AZIkIgvDex4HAQmVJsrKk5BNBEJbImZErUiUv0r/H//PvIDWjiagNTURtaCJqQxNRG5qI2tBE1MbvCGY2qzljwq0AAAAASUVORK5CYII=",
-               "type":"image/png"
-            }
-         ],
-         "label":[
-            {
-               "term":"primary",
-               "lang":"pt_PT",
-               "value":"musica"
-            },
-            {
-               "term":"primary",
-               "lang":"en_GB",
-               "value":"music"
-            }
-         ],
-         "categories":[
-
-         ]
+         "targetPOI": "51d2a838723e8e09d8d6fafc",
+         "term": "within",
+         "base": "http://tourism.citysdk.cm-lisboa.pt/pois/"
       }
+      ]
+   },
+   "label": [
+   {
+      "term": "primary",
+      "value": "Reunião Pública CML de 26 de junho",
+      "lang": "pt-PT"
+   },
+   {
+      "term": "primary",
+      "value": "City Hall Public Meeting, June 26",
+      "lang": "en-GB"
+   }
+   ],
+   "description": [
+   {
+      "value": "Realiza-se no dia 26 de Junho de 2013, às 15:00 horas, na Sala de Reuniões dos Paços do Concelho de Lisboa, a 174.ª Reunião Pública da Câmara Municipal de Lisboa com a seguinte <media 16851 _blank - \"UNDEFINED, Ordem de Trabalhos da Reunião Pública de Câmara de 26 junho 2013, OT_174_Reuniao_Publica_26-06-2013.pdf, 120 KB\">Ordem de trabalhos</media>.\r\nA sessão tem transmissão em direto online a partir deste sítio da internet.",
+      "lang": "pt-PT"
+   },
+   {
+      "value": "On June 26, at 3pm,&nbsp;in the Town-Hall Public Sessions room, there will be a meeting to discuss the following &nbsp;<media 16851 _blank external-link-new-window \"Opens external link in new window\">Agenda</media>.\r\n",
+      "lang": "en-GB"
+   }
+   ],
+   "category": [
+   {
+      "value": "Agenda",
+      "term": "category",
+      "lang": "pt-PT"
+   },
+   {
+      "term": "category",
+      "value": "Dstk-home-top",
+      "lang": "pt-PT"
+   }
+   ],
+   "time": [
+   {
+      "term": "open",
+      "value": "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//ddaysoftware.com//NONSGML DDay.iCal 1.0//EN\r\nBEGIN:VEVENT\r\nDESCRIPTION:Realiza-se no dia 26 de Junho de 2013\\, às 15:00 horas\\, na Sal\r\n a de Reuniões dos Paços do Concelho de Lisboa\\, a 174.ª Reunião Pública da\r\n  Câmara Municipal de Lisboa com a seguinte <media 16851 _blank - \"UNDEFINE\r\n D\\, Ordem de Trabalhos da Reunião Pública de Câmara de 26 junho 2013\\, OT_\r\n 174_Reuniao_Publica_26-06-2013.pdf\\, 120 KB\">Ordem de trabalhos</media>.\\n\r\n A sessão tem transmissão em direto online a partir deste sítio da internet\r\n .\r\nDTEND:20130626T235900\r\nDTSTART:20130626T140000\r\nLOCATION:Paços do Concelho de Lisboa\r\nSEQUENCE:0\r\nSUMMARY:Reunião Pública CML de 26 de junho\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n",
+      "type": "text/icalendar"
+   },
+   {
+      "term": "open",
+      "value": "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//ddaysoftware.com//NONSGML DDay.iCal 1.0//EN\r\nBEGIN:VEVENT\r\nDESCRIPTION:On June 26\\, at 3pm\\,&nbsp\\;in the Town-Hall Public Sessions ro\r\n om\\, there will be a meeting to discuss the following &nbsp\\;<media 16851 \r\n _blank external-link-new-window \"Opens external link in new window\">Agenda\r\n </media>.\\n\r\nDTEND:20121031T235900\r\nDTSTART;VALUE=DATE:20121028\r\nLOCATION:Lisboa\r\nSEQUENCE:0\r\nSUMMARY:City Hall Public Meeting\\, June 26\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n",
+      "type": "text/icalendar"
+   }
+   ],
+   "link": [
+   {
+      "term": "related",
+      "href": "http://www.cm-lisboa.pt/uploads/pics/Reuniao_Publica_CML_1_LP_02.jpg",
+      "type": "image/png"
+   }
+   ]
+}
+
+var categoryJson = {
+   categories: [
+   {
+      categories: [ ],
+      label: [
+      {
+         term: "primary",
+         value: "Categoria base - pois",
+         lang: "pt-PT"
+      },
+      {
+         term: "primary",
+         value: "Base category - pois",
+         lang: "en-GB"
+      }
+      ],
+      term: "category",
+      id: "51d2a833723e8e09d8d6fa02",
+      lang: "pt-PT"
+   },
+   {
+      categories: [ ],
+      label: [
+      {
+         term: "primary",
+         value: "Património - Arquitectura Civil",
+         lang: "pt-PT"
+      }
+      ],
+      term: "category",
+      id: "51d2a835723e8e09d8d6fa03",
+      lang: "pt-PT",
+      created: "2012-03-28T11:42:13.0000000Z"
+   },
+   {
+      categories: [ ],
+      label: [
+      {
+         term: "primary",
+         value: "Património - Arquitectura Industrial",
+         lang: "pt-PT"
+      }
+      ],
+      term: "category",
+      id: "51d2a835723e8e09d8d6fa04",
+      lang: "pt-PT",
+      created: "2012-03-28T11:42:13.0000000Z"
+   }
    ]
 };
 
 var tagJson = {
    "tags":[
+   {
+      "tag":[
       {
-         "tag":[
-            {
-               "lang":"pt_PT",
-               "value":"Jardim"
-            },
-            {
-               "lang":"en_GB",
-               "value":"Garden"
-            }
-         ]
+         "lang":"pt_PT",
+         "value":"Jardim"
       },
       {
-         "tag":[
-            {
-               "lang":"pt_PT",
-               "value":"Estadio"
-            },
-            {
-               "lang":"en_GB",
-               "value":"Stadium"
-            }
-         ]
+         "lang":"en_GB",
+         "value":"Garden"
       }
+      ]
+   },
+   {
+      "tag":[
+      {
+         "lang":"pt_PT",
+         "value":"Estadio"
+      },
+      {
+         "lang":"en_GB",
+         "value":"Stadium"
+      }
+      ]
+   }
    ]
 };

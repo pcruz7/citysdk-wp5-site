@@ -32,10 +32,10 @@ function setUpSliders () {
 
 	if(internal != null) {
 		internal.hide();
-		$('.slider').click(function(e) {
+		$('.slider').children('h5').click(function(e) {
 			e.preventDefault();
-			var div = $(this).children('div'),
-			header = $(this).children('h5');
+			var div = $(this).siblings('div'),
+			header = $(this);
 			div.slideToggle('fast', function (){
 				if(div.is(':visible'))
 					header.children("span").text("[-]");
