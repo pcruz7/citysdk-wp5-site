@@ -21,6 +21,13 @@ function loadMap (callback) {
 	'<div id="progress" style="margin-top: 10px">'+
 	'	<div id="progressbar-map"><div class="progress-label" style="margin-left: 45%">Loading...</div></div>'+
 	'</div>'+
+	'<div id="endpoint-select">' +
+	'	<label for="endpoint">Endpoint' +
+	'	<select id="endpoint">' +
+	'	</select>' +
+	'	<label for="term">Term' +
+	'	<input type="text" name="term" id="term" value="entrance">' +
+	'</div>' +
 	'<div id="route-select" style="margin-top: 10px">'+
 	'	<label for="route">View Route:</label>'+
 	'	<select id="route">'+
@@ -41,7 +48,18 @@ function loadMap (callback) {
 
 	$('#map-container').html(html);
 	$('#mError').hide();
+
+	$('#endpoint').append('<option term="entrance" value="http://tourism.citysdk.cm-lisboa.pt/resources">Lisbon</option>');
+	$('#endpoint').append('<option term="center" value="http://62.38.245.62/CitySDK/resources">Lamia</option>');
+	$('#endpoint').append('<option term="hotspot" value="http://citysdk.inroma.roma.it/CitySDK/resources">Roma</option>');
+	$('#endpoint').append('<option term="" value="http://events.hubi.fi/citysdk/v1">Helsinki</option>');
 	
+	$('#endpoint').change(function () {
+		var selected = $(this).find('option:selected');
+		initMapClient(selected.val());
+		$('#term').val(selected.attr('term'));
+	});
+
 	initMapClient("http://tourism.citysdk.cm-lisboa.pt/resources");
 	consoleCB = callback;
 	initializeMap();
@@ -339,7 +357,7 @@ function handlePois(data) {
 		title = getTitles(poi),
 		description = getDescriptions(poi);
 
-		var myLatLng = DataReader.getLocationGeometry(poi, term.POINT_TERM_ENTRANCE);
+		var myLatLng = DataReader.getLocationGeometry(poi, $('#term').val());
 		for (var key in myLatLng) {
 			if (myLatLng[key].getNumGeo() == 1)
 				generateOverlay(title, myLatLng[key], description);
@@ -369,7 +387,7 @@ function handleEvents(data) {
 		title = getTitles(event),
 		description = getDescriptions(event);
 
-		var myLatLng = DataReader.getLocationGeometry(event, term.POINT_TERM_ENTRANCE);
+		var myLatLng = DataReader.getLocationGeometry(event, $('#term').val());
 		for (var key in myLatLng) {
 			if (myLatLng[key].getNumGeo() == 1)
 				generateOverlay(title, myLatLng[key], description);
@@ -426,7 +444,7 @@ function handleRoute(data, textStatus, jqXHR) {
 		var poi = pois[key],
 		title = getTitles(poi),
 		description = getDescriptions(poi), 
-		myLatLng = DataReader.getLocationGeometry(poi, term.POINT_TERM_ENTRANCE),
+		myLatLng = DataReader.getLocationGeometry(poi, $('#term').val()),
 		direction;
 
 		for (var key in myLatLng) {

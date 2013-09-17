@@ -187,12 +187,11 @@ ul li.navi {
 }
 
 ul li a.navi {
-	color: #fff;
+	color: #ffffff;
 	text-decoration: none;
 	text-shadow: 1px 1px 1px #000;
+	display: inline;
 	padding: 3px 7px;
-	-webkit-transition-property: color, background;
-	-webkit-transition-duration: 0.5s, 0.5s;
 }
 
 ul li a:hover {

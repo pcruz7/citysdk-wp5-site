@@ -149,6 +149,11 @@ function hideCalendarLoad() {
 };
 
 function reloadCalendar(data, textStatus, jqXHR) {
+	if (!data) {
+		hideCalendarLoad();
+		return;
+	}
+
 	var events = data['event'],
 	index = 0,
 	l_lang = "pt_PT",
@@ -219,11 +224,12 @@ function fetchData(params) {
 			"category" : categoryParam,
 			"limit": -1
 		};
-	} else
-	parameters = { 
-		"time": dateParam,
-		"limit": -1 
-	};
+	} else {
+		parameters = { 
+			"time": dateParam,
+			"limit": -1 
+		};
+	}
 
 	showCalendarLoad();
 	cClient.getEvents(parameters, reloadCalendar, handleCalendarError);
@@ -247,7 +253,10 @@ function handleCategories(data, textStatus, jqXHR) {
 };
 
 function getLang(lang) {
-	return lang.replace("-", "_").split("_")[0];
+	if (lang)
+		return lang.replace("-", "_").split("_")[0];
+	else
+		return 'pt';
 };
 
 function getCategories(data) {
